@@ -107,4 +107,12 @@
         </section>
     </main>
 </body>
+<script>
+    let p_contents = document.querySelectorAll(".p_contents>div")
+    for(let i = 0 ;i<p_contents.length ;i++){
+        p_contents[i].addEventListener("click", function(){
+            p_contents[i].style.display = "none"
+        })
+    }
+</script>
 </html>
