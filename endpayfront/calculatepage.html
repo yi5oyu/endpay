@@ -74,7 +74,7 @@
         font-size: 20px;
         font-weight: bold;
     }
-    .print_date{
+    .print{
         height: 30px;
         font-size: 16px;
         font-weight: 600;
@@ -130,6 +130,33 @@
         cursor: pointer;
         border-radius: 5px;
     }
+    #persons{
+        height: 50px;
+    }
+    .text{
+        font-size: 18px;
+        color: #5cc4ef;
+        font-weight: 600;
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+    }
+    .p_text{
+        margin: 0 15px;
+    }
+    .text_btns{
+        text-align: center;
+        width: 45px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .input_text{
+        text-align: center;
+        width: 44px;
+        color: gray;
+        font-weight: 600;
+    }
 </style>
 
 <body>
@@ -157,8 +184,12 @@
                         
                     </div>
                     <div>
-                        <div class="print_date">날짜 :</div>
+                        <div class="print">날짜 :</div>
                         <div class="selected_date"></div>
+                    </div>
+                    <div>
+                        <div class="print">인원 :</div>
+                        <div class="selected_num"></div>
                     </div>
                 </div>
                 <div class="p_contents">
@@ -167,8 +198,11 @@
                         <div class="date_del p_btns">지우기</div>
                         <div class="date_write p_btns">작성</div>
                     </div>
-                    <div>
-
+                    <div id="persons">
+                        <div class="text p_text">인원</div>
+                        <div class="text text_btns p_btns">-</div>
+                        <div class="text input_text">0</div>
+                        <div class="text text_btns p_btns">+</div>
                     </div>
                     <div>
                         
@@ -227,6 +261,9 @@
     $('.date_del').on("click",function(){
         $(".selected_date").css("display","none");
     })
+</script>
+<script>
+    //$('.p_btns').eq(0)
     p_btnsEvent()
     function p_btnsEvent(){
         let btns = document.querySelectorAll(".p_btns")
@@ -243,6 +280,25 @@
     }
 </script>
 <script>
+    persons_btnsEvent()
+    function persons_btnsEvent(){
+        let t_btns = document.querySelectorAll(".text_btns")
+        for(let i = 0 ;i<t_btns.length;i++){
+            t_btns[i].addEventListener("click",function(){
+                let num = Number($('.input_text').text())
+                if(i==1){
+                    $('.input_text').text(''+ ++num)
+                }else{
+                    if(num>0){
+                        $('.input_text').text(''+ --num)
+                    }
+                }
+                $('.selected_num').text($('.input_text').text())
+            })
+        }
+    }
+</script>
+<script>
     function p_contents_click(){
         let p_contents = document.querySelectorAll(".p_contents>div")
         for(let i = 0 ;i<p_contents.length ;i++){
@@ -251,6 +307,5 @@
             })
         }
     }
-
 </script>
 </html>
