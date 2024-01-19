@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.1.0/css/datepicker.min.css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/air-datepicker@2.2.3/dist/js/datepicker.min.js"></script>
+
+<style>
+    *{
+        font-size: 0;
+        margin: 0;
+    }
+    header{
+        background-color: #5cc4ef;
+    }
+    .head{
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+    }
+    main{
+        width: 1080px;
+        height: 760px;
+        margin: 0 auto;
+        /* padding: 10px; */
+        background-color: rgba(231, 228, 228, 0.536);
+        display: flex;
+    }
+    .menu{
+        background-color: white;
+        width: 195px;
+        height: 730px;
+        border-radius: 5px;
+        margin: 15px 0 15px 15px;
+        display: inline-block;
+    }
+    .menu > div{
+        background-color: #5cc4ef;
+        width: 175px;
+        height: 51px;
+        border-radius: 5px;
+    }
+    .menu > div:nth-child(n+2) {
+        margin: 0 10px 10px 10px;
+    }
+    .h_menu{
+        margin: 10px;
+    }
+    .contents{
+        width: 840px;
+    }
+    .contents > div, #contents_box > .m_contents, .p_contents > div{
+        background-color: white;
+        border-radius: 5px;
+    }
+    .title{
+        width: 840px;
+        height: 100px;
+        margin: 15px;
+    }
+    #contents_box{
+        width: 865px;
+        height: 615px;
+        background-color: transparent;
+        display: flex;
+    }
+    .m_contents{
+        width: 625px;
+        height: 615px;
+        margin: 0 15px;
+    }
+    .p_contents{
+        background-color: transparent;
+        width: 200px;
+        height: 615px;
+        overflow: hidden;
+    }
+    .p_contents{
+        display: flex;
+        background-color: white;
+        width: 200px;
+        height: 615px;
+        margin-bottom: 15px;
+    }
+    .p_headtext{
+        display: inline-block;
+        width: 190px;
+        height: 50px;
+        border: none;
+        font-size: 20px;
+        outline: none;
+        border-radius: 5px;
+        background-color: #5cc3ef38;
+        margin: 10px 5px 5px 5px;
+        text-align: center;
+        font-weight: 900;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="head">
+            
+        </div>
+    </header>
+    <main>
+        <section class="menu">
+            <div class="h_menu">
+
+            </div>
+            <div>
+
+            </div>
+        </section>
+        <section class="contents">
+            <div class="title">
+
+            </div>
+            <div id="contents_box">
+                <div class="m_contents">
+
+                </div>
+                <div class="p_contents">
+                    <input class="p_headtext" type="text" placeholder="장소"/>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<script>
+
+</script>

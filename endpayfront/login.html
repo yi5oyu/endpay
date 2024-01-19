@@ -1,0 +1,128 @@
+<style>
+    *{
+        font-size: 0;
+        margin: 0;
+    }
+    header{
+        background-color: #5cc4ef;
+    }
+    .head{
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+    }
+    main{
+        width: 1080px;
+        height: 760px;
+        margin: 0 auto;
+        /* padding: 10px; */
+        background-color: rgba(231, 228, 228, 0.536);
+        display: flex;
+    }
+    .menu{
+        background-color: white;
+        width: 195px;
+        height: 730px;
+        border-radius: 5px;
+        margin: 15px 0 15px 15px;
+        display: inline-block;
+    }
+    .menu > div{
+        background-color: #5cc4ef;
+        width: 175px;
+        height: 51px;
+        border-radius: 5px;
+    }
+    .menu > div:nth-child(n+2) {
+        margin: 0 10px 10px 10px;
+    }
+    .h_menu{
+        margin: 10px;
+    }
+    .contents{
+        width: 840px;
+    }
+    .login{
+        width: 840px;
+        height: 730px;
+        margin: 15px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login_box{
+        border-radius: 5px;
+        width: 400px;
+        height: 600px;
+        background-color: #5cc3ef6c;
+        border: 3px solid #5cc4ef;
+    }
+    .login_title{
+        width: 400px;
+        height: 250px;
+        color: #5ce62e;
+        font-size: 40px;
+        text-align: center;
+        font-weight: 900;
+        line-height: 150px;
+    }
+    .login_row{
+        width: 370px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 15px;
+    }
+    .login_input{
+        display: inline-block;
+        border: none;
+        width: 370px;
+        border-radius: 5px;
+        height: 50px;
+        outline: #6ae93f;
+        color: #5ce62e;
+        font-size: 16px;
+    }
+    .login_btn{
+        width: 370px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 50px;
+        background-color: #5cc4ef;
+        border: 0;
+        border-radius: 5px;
+    }
+</style>
+<main>
+    <section class="menu">
+        <div class="h_menu">
+
+        </div>
+        <div>
+
+        </div>
+    </section>
+    <section class="contents">
+        <div class="login">
+            <div class="login_box">
+                <div class="login_title">End Pay</div>
+                <div class="login_row">
+                    <input class="login_input" type="text" placeholder="아이디" />
+                </div>
+                <div class="login_row">
+                    <input class="login_input" type="text" placeholder="비밀번호" />
+                </div>
+                <div class="login_row">
+                    
+                </div>
+                <div class="login_row">
+                    <button class="login_btn" type="submit">로그인</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
