@@ -62,7 +62,7 @@
     .login_title{
         width: 400px;
         height: 250px;
-        color: #5ce62e;
+        color: black;
         font-size: 40px;
         text-align: center;
         font-weight: 900;
@@ -81,8 +81,9 @@
         border-radius: 5px;
         height: 50px;
         outline: #6ae93f;
-        color: #5ce62e;
-        font-size: 16px;
+        color: black;
+        font-size: 18px;
+        padding-left: 10px;
     }
     .login_btn{
         width: 370px;
@@ -95,6 +96,36 @@
         background-color: #5cc4ef;
         border: 0;
         border-radius: 5px;
+    }
+    .sns_btns{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sns_btn {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        color: #ffffff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+    }
+    .naver_bg{
+        background-color: #1EC800;
+    }
+    .cacao_bg{
+        background-color: #ffe812;
+        margin: 0 15px;
+    }
+    .google_bg{
+        background-color: #FF5722;
+    }
+    .sns_btn > span {
+        font-size: 20px;
+        text-align: center;
     }
 </style>
 <main>
@@ -121,6 +152,17 @@
                 </div>
                 <div class="login_row">
                     <button class="login_btn" type="submit">로그인</button>
+                </div>
+                <div class="login_row sns_btns">
+                    <a href="/naver/login" class="sns_btn naver_bg">
+                        <span class="naver_icon">N</span>
+                    </a>
+                    <a href="/cacao/login" class="sns_btn cacao_bg">
+                        <span class="cacao_icon">C</span>
+                    </a>
+                    <a href="/google/login" class="sns_btn google_bg">
+                        <span class="google_icon">G</span>
+                    </a>
                 </div>
             </div>
         </div>
