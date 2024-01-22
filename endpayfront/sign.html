@@ -97,41 +97,76 @@
         border: 0;
         border-radius: 5px;
     }
+    .gender {
+        width: 370px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+    }
+    .gender_2 {
+        display: inline-block;
+        margin-left: 35px;
+        margin-top: 5px;
+        width: 135px;
+        height: 35px;
+        background-color: white;
+        border-radius: 5px;
+        color:black;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .radiogen {
+        display: none;
+    }
+    .radiogen + span {
+        background-color:white;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        display: inline-block;
+        width: 135px;
+        height: 35px;
+    }
 </style>
 <main>
-    <section class="menu">
-        <div class="h_menu">
-
-        </div>
-        <div>
-
-        </div>
-    </section>
     <section class="contents">
         <div class="sign">
             <div class="sign_box">
+                <form method="post" action="/api/newsign">
                 <div class="sign_title">End Pay</div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="아이디" />
+                    <input class="sign_input" type="text" name="userid" placeholder="아이디" />
                 </div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="비밀번호" />
+                    <input class="sign_input" type="text" name="userpw" placeholder="비밀번호" />
                 </div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="이름" />
+                    <input class="sign_input" type="text" name="uname" placeholder="이름" />
                 </div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="성별" />
+                    <div class="gender">
+                        <label class="gender_2">
+                            <input class="radiogen" type="radio" name="gender" value="남자">
+                            <span>남자</span>
+                        </label>
+                        <label class="gender_2">
+                            <input class="radiogen" type="radio" name="gender" value="여자">
+                            <span>여자</span>
+                        </label>                
+                    </div>
                 </div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="전화번호" />
+                    <input class="sign_input" type="text" name="phone" placeholder="전화번호" />
                 </div>
                 <div class="sign_row">
-                    <input class="sign_input" type="text" placeholder="이메일" />
+                    <input class="sign_input" type="text" name="email" placeholder="이메일" />
                 </div>
                 <div class="sign_row">
                     <button class="sign_btn" type="submit">회원가입</button>
                 </div>
+                </form>
             </div>
         </div>
     </section>
