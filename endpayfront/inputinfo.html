@@ -26,31 +26,6 @@
         background-color: rgba(231, 228, 228, 0.536);
         display: flex;
     }
-
-    .menu {
-        background-color: white;
-        width: 195px;
-        height: 730px;
-        border-radius: 5px;
-        margin: 15px 0 15px 15px;
-        display: inline-block;
-    }
-
-    .menu>div {
-        background-color: #5cc4ef;
-        width: 175px;
-        height: 51px;
-        border-radius: 5px;
-    }
-
-    .menu>div:nth-child(n+2) {
-        margin: 0 10px 10px 10px;
-    }
-
-    .h_menu {
-        margin: 10px;
-    }
-
     .contents {
         width: 840px;
     }
@@ -491,14 +466,14 @@
         document.querySelector(".show_memo").innerText = e.target.value
     })
 
-    let input = document.querySelector('.money_input');
+    let input = document.querySelector('.money_input')
         input.addEventListener('keyup', function(e) {
-        let value = e.target.value;
-        value = Number(value.replaceAll(',', ''));
+        let value = e.target.value
+        value = Number(value.replaceAll(',', ''))
         if(isNaN(value)) {
-            input.value = 0;
+            input.value = 0
         }else {
-            const formatValue = value.toLocaleString('ko-KR');
+            let formatValue = value.toLocaleString('ko-KR')
             input.value = formatValue;
             document.querySelector(".d_money").innerText = e.target.value
         }

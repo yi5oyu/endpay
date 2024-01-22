@@ -1,3 +1,4 @@
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
     main{
         width: 1080px;
@@ -17,27 +18,36 @@
     }
 
     .menu>div {
-        background-color: #5cc4ef;
+        background-color: #5cc4ef80;
         width: 175px;
         height: 51px;
         border-radius: 5px;
+        line-height: 51px;
+        text-align: center;
+        font-size: 18px;
     }
 
     .menu>div:nth-child(n+2) {
         margin: 0 10px 10px 10px;
     }
-
     .h_menu {
         margin: 10px;
     }
 </style>
 <main>
     <section class="menu">
-        <div class="h_menu">
-
-        </div>
-        <div>
-
-        </div>
+        <div class="h_menu menu_btn">소비 내역서</div>
+        <div class="menu_btn">지출 작성</div>
     </section>
 </main>
+<script>
+    let menu_btn = document.querySelectorAll(".menu_btn")
+    for(let i = 0 ;i<menu_btn.length ;i++){
+        menu_btn[i].addEventListener("click",function(){
+            menu_btn[i].style.backgroundColor = "#5cc4ef"
+            for(let j = 0 ;j<menu_btn.length ;j++)
+                if(i!=j)
+                    menu_btn[j].style.backgroundColor = "#5cc4ef80"
+        })
+    }
+</script>
