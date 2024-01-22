@@ -1,17 +1,19 @@
 <style>
-    *{
-        font-size: 0;
+    * {
         margin: 0;
     }
-    header{
+
+    header {
         background-color: #5cc4ef;
     }
-    .head{
+
+    .head {
         font-size: 16px;
         height: 100px;
         text-align: center;
     }
-    main{
+
+    main {
         width: 1080px;
         height: 760px;
         margin: 0 auto;
@@ -19,7 +21,8 @@
         background-color: rgba(231, 228, 228, 0.536);
         display: flex;
     }
-    .menu{
+
+    .menu {
         background-color: white;
         width: 195px;
         height: 730px;
@@ -27,32 +30,203 @@
         margin: 15px 0 15px 15px;
         display: inline-block;
     }
-    .menu > div{
+
+    .menu>div {
         background-color: #5cc4ef;
         width: 175px;
         height: 51px;
         border-radius: 5px;
     }
-    .menu > div:nth-child(n+2) {
+
+    .menu>div:nth-child(n+2) {
         margin: 0 10px 10px 10px;
     }
-    .h_menu{
+
+    .h_menu {
         margin: 10px;
     }
-    .contents{
+
+    .contents {
         width: 840px;
     }
-    .main{
+
+    .main {
         width: 840px;
         height: 730px;
         margin: 15px;
         background-color: white;
         border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
-    
+
+    .my_info {
+        width: 810px;
+        height: 100px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+        margin: 15px;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    .blind {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    .vertical_chart_box {
+        position: relative;
+        width: 810px;
+        margin: 0 13px 15px 13px;
+        background-color: #5cc3ef30;
+        border: 1px solid #5cc4ef30;
+        border-radius: 5px;
+
+        .contents_box {
+            width: 810px;
+            height: 30px;
+            margin-bottom: 5px;
+            border: 1px solid red;
+        }
+
+        .chart_box {
+            width: 810px;
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 70px;
+            box-sizing: border-box;
+            height: 200px;
+        }
+
+        .axis_y {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 70px;
+            height: 100%;
+            color: #5cc4ef;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 5px;
+                bottom: 0;
+                right: 0;
+                width: 1px;
+                background: #d3d3d3;
+            }
+        }
+
+        .axis_x {
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            border-bottom: 1px solid #d3d3d3;
+
+            .item {
+                flex: 1;
+                position: relative;
+
+                .text_box {
+                    position: absolute;
+                    bottom: -30px;
+                    left: 50%;
+                    text-align: center;
+                    -webkit-transform: translate(-50%, 0);
+                    -ms-transform: translate(-50%, 0);
+                    -o-transform: translate(-50%, 0);
+                    transform: translate(-50%, 0);
+
+                    .day {
+                        display: block;
+                        font-size: 12px;
+                        line-height: 19px;
+                        color: #4a4a4a;
+
+                        &.sat {
+                            color: #3475ed;
+                        }
+
+                        &.sun {
+                            color: #eb474a;
+                        }
+                    }
+
+                    .time {
+                        display: block;
+                        margin-top: 3px;
+                        font-size: 12px;
+                        color: #999;
+                    }
+                }
+            }
+
+            .graph {
+                display: -webkit-flex;
+                display: -ms-flex;
+                display: -o-flex;
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                margin: 0 auto;
+                padding: 0;
+                width: 35px;
+                height: 100%;
+                background: #e8e8e8;
+                border-radius: 3px 3px 0 0;
+                overflow: hidden;
+
+                .time {
+                    display: block;
+                    position: relative;
+                    margin-bottom: -4px;
+                    padding-top: 4px;
+                    box-sizing: content-box;
+                    width: 100%;
+                    border-radius: 3px 3px 0 0;
+
+                    &.data1 {
+                        background: #e73ea9;
+                        z-index: 3;
+                    }
+
+                    &.data2 {
+                        background: #30d97d;
+                        z-index: 2;
+                    }
+
+                    &.data3 {
+                        background: #f5dc12;
+                        z-index: 1;
+                    }
+                }
+            }
+
+            button.graph {
+                border: 0;
+            }
+        }
+    }
 </style>
 <main>
     <section class="menu">
@@ -65,7 +239,84 @@
     </section>
     <section class="contents">
         <div class="main">
+            <div class="my_info">
 
+            </div>
+            <div class="vertical_chart_box">
+                <div class="contents_box">
+
+                </div>
+                <div class="chart_box">
+                    <ul class="axis_y">
+                        <li class="item">1,000,000<span class="blind">시간</span></li>
+                        <li class="item">3<span class="blind">시간</span></li>
+                        <li class="item">6<span class="blind">시간</span></li>
+                        <li class="item">9<span class="blind">시간</span></li>
+                        <li class="item">12<span class="blind">시간</span></li>
+                    </ul>
+                    <ul class="axis_x">
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day">17(월)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data1" style="height:80%;"><span class="blind">data 타입 1</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day">18(화)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data1" style="height:50%;"><span class="blind">data 타입 1</span></span>
+                                <span class="time data2" style="height:20%;"><span class="blind">data 타입 2</span></span>
+                                <span class="time data3" style="height:10%;"><span class="blind">data 타입 3</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day">19(수)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data3" style="height:100%;"><span class="blind">data 타입
+                                        3</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day">20(목)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data1" style="height:100%;"><span class="blind">data 타입
+                                        1</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day">21(금)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data1" style="height:40%;"><span class="blind">data 타입 1</span></span>
+                                <span class="time data3" style="height:40%;"><span class="blind">data 타입 3</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day sat">22(토)</strong>
+                            </div>
+                            <button type="button" class="graph">
+                                <span class="time data2" style="height:20%;"><span class="blind">data 타입 2</span></span>
+                            </button>
+                        </li>
+                        <li class="item">
+                            <div class="text_box">
+                                <strong class="day sun">23(일)</strong>
+                            </div>
+                            <button type="button" class="graph"></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 </main>
