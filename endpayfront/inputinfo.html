@@ -69,7 +69,6 @@
         width: 810px;
         height: 100px;
         border-radius: 5px;
-        background-color: #5cc4ef;
         margin: 15px;
     }
     .datepicker *{
@@ -79,13 +78,22 @@
         /* color: #2d1dab; */
         font-weight: 700;
     }
+    .datepicker--cell{
+        height: 28px;
+    }
     #date{
+        vertical-align: top;
+        display: inline-block;
+        margin: 15px 15px 15px 0;
         width: 200px;
-        height: 270px;
+        height: 250px;
+        border-radius: 5px;
+        background-color: #5cc4ef35;
     }
     .datepicker{
+        background: transparent;
         width: 200px;
-        height: 240px;
+        height: 220px;
         border: none;
     }
     .date_del, .date_write{
@@ -150,22 +158,163 @@
         line-height: 35px;
         vertical-align: top;
     }
+    #detail_box{
+        vertical-align: top;
+        background-color: white;
+        border-radius: 5px;
+        display: inline-block;
+        width: 595px;
+        height: 250px;
+        margin: 15px;
+    }
+    .detail_text{
+        font-size: 16px;
+        border-radius: 5px;
+        width: 590px;
+        height: 50px;
+        background-color: #5cc4ef50;
+        margin-bottom: 15px;
+        padding-left: 5px;
+    }
+    .detail_input{
+        width: 547px;
+        height: 50px;
+        border: none;
+        font-size: 16px;
+        outline: black;
+        margin-left: 5px;
+        background-color: transparent;
+    }
+    .money{
+        display: inline-block;
+        width: 170px;
+        height: 185px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;
+        margin-right: 15px;
+        vertical-align: top;
+    }
+    .money_text{
+        font-size: 20px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+    .money_input{
+        vertical-align: top;
+        width: 170px;
+        height: 50px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        text-align: center;
+    }
+    .memo_box{
+        display: inline-block;
+        width: 410px;
+        height: 185px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;  
+    }
+    .memo_text{
+        height: 30px;
+        font-size: 16px;
+        margin: 5px 5px 0 5px;
+        line-height: 30px;
+    }
+    .memo{
+        width: 400px;
+        height: 145px;
+        resize: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        overflow: hidden;
+        margin: 0 5px;
+    }
+    .statement{
+        width: 810px;
+        height: 170px;
+        border-radius: 5px;
+        background-color: #5cc4ef50;
+        margin: 0 15px 15px 15px;
+    }
+    .title_col{
+        width: 810px;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .title_col > div{
+        background-color: #5cc4ef;
+        border-radius: 3px;
+    }
+    .t_date, .d_date, .d_type, .d_category, .d_money{
+        display: inline-block;
+        font-size: 18px;
+        width: 120px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .detail_contents > div{
+        background-color: #5cc4ef60;
+    }
+    .t_detail{
+        display: inline-block;
+        font-size: 18px;
+        width: 330px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .d_detail{
+        display: inline-block;
+        font-size: 18px;
+        width: 330px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .show_memo{
+        width: 800px;
+        height: 90px;
+        border-radius: 5px;
+        background-color: #5cc4ef20;
+        font-size:15px;
+        padding: 5px;
+    }
+    .ad{
+        display: inline-block;
+        width: 690px;
+        height: 100px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+        margin-right: 10px;
+    }
+    .btn{
+        display: inline-block;
+        width: 110px;
+        height: 100px;
+        vertical-align: top;
+        font-size: 28px;
+        border: 0;
+        background-color: #5cc;
+        border-radius: 5px;
+    }
 </style>
 <main>
-    <section class="menu">
-        <div class="h_menu">
-
-        </div>
-        <div>
-
-        </div>
-    </section>
     <section class="contents">
         <div class="info">
-            <form method="post" action="/api/insert">
+            <form method="get" action="/api/insert">
                 회원 아이디/구분/항목/상세/날짜/금액/메모
                 <div class="my_info">
-
+                    <div class="ad"></div>
+                    <button class="btn" type="submit">제출</button>
                 </div>
                 <div id="expenseType">
                     <input class="radio_extype" type="radio" name="extype" value="regular" checked>
@@ -190,14 +339,51 @@
                     <span>교통</span>
                     <input class="radio_contype irregular" type="radio" name="contype" value="의료">
                     <span>의료</span>
-                    <input class="radio_contype saving" type="radio" name="contype" value="저축">
-                    <span>저축</span>
+                    <input class="radio_contype saving" type="radio" name="contype" value="예금">
+                    <span>예금</span>
+                    <input class="radio_contype saving" type="radio" name="contype" value="적금">
+                    <span>적금</span>
+
+                    <input class="radio_contype regular irregular saving" type="radio" name="contype" value="기타">
+                    <span>기타</span>
                 </div>
-                <div id="date" class="items">
-                    <input type="text" id="input"/>
-                    <div class="date_del p_btns">지우기</div>
-                    <div class="date_write p_btns">작성</div>
+                <div id="detail_box">
+                    <div class="detail_text">
+                        상세 <input type="text" class="detail_input" name="detailtext" placeholder="상세 입력 20자 제한" maxlength="20"/>
+                    </div>
+                    <div class="money">
+                        <div class="money_text">금액</div>
+                        <input class="money_input" type="text" name="money" placeholder="ex) 50,000"/>
+                    </div>
+                    <div class="memo_box">
+                        <div class="memo_text">메모</div>
+                        <textarea class="memo" name="memo"></textarea>
+                    </div>
                 </div>
+                <div id="date">
+                    <input type="text" id="input" name="date"/>
+                </div>
+                <div class="statement">
+                    <!-- <div class="s_title">명세서</div> -->
+                    <div class="title_col">
+                        <div class="t_date">날짜</div>
+                        <div class="t_date">구분</div>
+                        <div class="t_date">항목</div>
+                        <div class="t_date">금액</div>
+                        <div class="t_detail">상세 설명</div>
+                    </div>
+                    <div class="detail_contents">
+                        <div class="d_date"></div>
+                        <div class="d_type"></div>
+                        <div class="d_category"></div>
+                        <div class="d_money"></div>
+                        <div class="d_detail"></div>
+                    </div>
+                    <div class="show_memo">
+
+                    </div>
+                </div>
+                
             </form>
         </div>
     </section>
@@ -217,14 +403,14 @@
         navTitles: {
             days: '<h1>yyyy</h1>,' + '<h1> &nbsp;MM<h1>'
         },
-        minDate: new Date(),
+        // minDate: new Date(),
         buttons: ['today'],
         dateFormat: 'yyyy-mm-dd',
         onSelect: function (formattedDate, date, picker) {
 			if (date) {
-                $('.selected_date').text(formattedDate);
+                $('.d_date').text(formattedDate);
 			} else {
-				$('.selected_date').text('');
+				$('.d_date').text('');
 			}
 		}
     });
@@ -240,11 +426,14 @@
     function radio_event(){
         let expenses = document.querySelectorAll(".radio_extype + span")
         let expense = document.querySelectorAll(".radio_extype")
+        let type = document.querySelector(".d_type")
+        type.innerText = "정기지출"
         expense[0].checked = true
         expenses[0].style.backgroundColor = "#5cc4ef"
         selected_contents(0)
         for(let i = 0 ; i<expenses.length ;i++){
             expenses[i].addEventListener("click",function(){
+                type.innerText = expenses[i].innerText
                 expense[i].checked = true
                 if(expense[i].checked)
                     expenses[i].style.backgroundColor = "#5cc4ef"
@@ -278,4 +467,30 @@
                         contspan[j].style.display = "inline-block"
             }
     }
+    contents_event()
+    function contents_event(){
+        let contents = document.querySelectorAll(".radio_contype + span")
+        let content = document.querySelectorAll(".radio_contype")
+        let detail = document.querySelector(".d_category")
+        for(let i = 0 ;i<contents.length ;i++){
+            contents[i].addEventListener("click", function(){
+                detail.innerText = contents[i].innerText
+                content[i].checked = true
+                if(content[i].checked)
+                    contents[i].style.backgroundColor = "#5cc4ef"
+                for(let j = 0 ;j<contents.length ;j++)
+                    if(i!=j)
+                        contents[j].style.backgroundColor = "white"
+            })
+        }
+    }
+    document.querySelector(".money_input").addEventListener("input",function(e){
+        document.querySelector(".d_money").innerText = e.target.value
+    })
+    document.querySelector(".detail_input").addEventListener("input",function(e){
+        document.querySelector(".d_detail").innerText = e.target.value
+    })
+    document.querySelector(".memo").addEventListener("input",function(e){
+        document.querySelector(".show_memo").innerText = e.target.value
+    })
 </script>
