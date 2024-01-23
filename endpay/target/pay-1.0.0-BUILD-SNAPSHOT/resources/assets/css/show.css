@@ -1,0 +1,230 @@
+@charset "UTF-8";
+<style>
+    * {
+        font-size: 0;
+        margin: 0;
+    }
+
+    header {
+        background-color: #5cc4ef;
+    }
+
+    .head {
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+    }
+
+    main {
+        width: 1080px;
+        height: 760px;
+        margin: 0 auto;
+        /* padding: 10px; */
+        background-color: rgba(231, 228, 228, 0.536);
+        display: flex;
+    }
+
+    .contents {
+        width: 840px;
+        height: 730px;
+    }
+
+    .main {
+        width: 840px;
+        height: 730px;
+        margin: 15px;
+        background-color: white;
+        border-radius: 5px;
+    }
+    .my_chart{
+        display: inline-block;
+        width: 810px;
+        height: 80px;
+        margin: 15px;
+        background-color: #5cc4ef;
+        border-radius: 5px;
+    }
+    .chart_title{
+        display: inline-block;
+        width: 440px;
+        font-size: 28px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+    }
+    #chart_box{
+        display: inline-block;
+        width: 810px;
+        height: 320px;
+        background-color: #5cc4ef60;
+        margin: 0 15px 15px 15px;
+        border-radius: 5px;
+    }
+    .doughnut_chart{
+        display: inline-block;
+        width: 335px;
+        height: 300px;
+        margin: 10px;
+    }
+    #d_chart {
+        width: 445px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .chartjs-doughnut-chart .chartjs-doughnut-arc text {
+      fill: black;
+    }
+    .line_chart{
+        display: inline-block;
+        width: 425px;
+        height: 300px;
+        margin: 15px;
+        vertical-align: top;
+    }
+    .select_data{
+        width: 425px;
+        height: 60px;
+        background-color: rgb(39, 39, 228);
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .select_line > div{
+        margin-top: 7px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-left: 16px;
+        width: 120px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        background-color: #cae6f4;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .data_box{
+        display: inline-block;
+        width: 810px;
+        height: 270px;
+        background-color: #5cc4ef60;
+        margin-top: 6px;
+        border-radius: 5px;
+    }
+    .regular_spending, .irregular_spending{
+        display: inline-block;
+        /* background-color: black; */
+        width: 260px;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .re_title, .ir_title, .sv_title{
+        height: 35px;
+        font-size: 18px;
+        line-height: 35px;
+        background-color: #5cc4ef;
+        border-radius: 5px;
+        padding-left: 10px;
+        font-weight: bold;
+        vertical-align: top;
+    }
+    .re_contents, .ir_contents{
+        height: 192px;
+        vertical-align: top;
+    }
+    .contents_name{
+        display: inline-block;
+        background-color: #5cc4ef60;
+        width: 125px;
+        height: 32px;
+        border-radius: 5px;
+        padding-left: 10px;
+        font-size: 17px;
+        line-height: 32px;
+        
+    }
+    .contents_money{
+        display: inline-block;
+        background-color: #5cc4ef60;
+        width: 120px;
+        height: 32px;
+        border-radius: 5px;
+        padding-left: 5px;
+        font-size: 16px;
+        line-height: 32px;
+        vertical-align: top;
+    }
+    .sum{
+        border-radius: 5px;
+        width: 270px;
+        height: 42px;
+        display: inline-block;
+        background-color: #5cc4ef90;
+    }
+    .sum_title{
+        display: inline-block;
+        line-height: 42px;
+        font-size: 18px;
+        padding-left: 5px;
+        width: 50px;
+    }
+    .re_sum_money, .ir_sum_money{
+        vertical-align: top;
+        display: inline-block;
+        text-align: right;
+        font-size: 18px;
+        line-height: 42px;
+        width: 200px;
+        padding-right: 5px;
+    }
+    .saving_spending{
+        display: inline-block;
+        width: 289px;
+        height: 100%;
+        border-radius: 5px;
+        vertical-align: top;
+    }
+    .sv_name{
+        width: 144px;
+    }
+    .sv_money{
+        width: 130px;
+    }
+    .sv_contents{
+        height: 128px;
+    }
+    .sv_sum{
+        width: 289px;
+    }
+    .sv_sum_money{
+        vertical-align: top;
+        display: inline-block;
+        text-align: right;
+        font-size: 18px;
+        line-height: 42px;
+        padding-right: 5px;
+        width: 229px;
+    }
+    .sums{
+        display: inline-block;
+        width: 289px;
+        height: 65px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+    }
+    .sums > div{
+        display: inline-block;
+        font-size: 18px;
+        height: 65px;
+        line-height: 65px;
+        vertical-align: top;
+        font-weight: bold;
+    }
+    .sums_title{
+        width: 75px;
+        padding-left: 5px;
+    }
+    .sums_money{
+        width: 204px;
+        padding-right: 5px;
+        text-align: right;
+    }
+</style>
