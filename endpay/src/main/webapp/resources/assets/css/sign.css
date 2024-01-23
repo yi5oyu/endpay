@@ -1,0 +1,113 @@
+@charset "UTF-8";
+<style>
+    *{
+        font-size: 0;
+        margin: 0;
+    }
+    header{
+        background-color: #5cc4ef;
+    }
+    .head{
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+    }
+    main{
+        width: 1080px;
+        height: 760px;
+        margin: 0 auto;
+        /* padding: 10px; */
+        background-color: rgba(231, 228, 228, 0.536);
+        display: flex;
+    }
+    .contents{
+        width: 840px;
+    }
+    .sign{
+        width: 840px;
+        height: 730px;
+        margin: 15px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sign_box{
+        border-radius: 5px;
+        width: 400px;
+        height: 600px;
+        background-color: #5cc3ef6c;
+        border: 3px solid #5cc4ef;
+    }
+    .sign_title{
+        width: 400px;
+        height: 100px;
+        color: black;
+        font-size: 40px;
+        text-align: center;
+        font-weight: 900;
+        line-height: 100px;
+    }
+    .sign_row{
+        width: 370px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 15px;
+    }
+    .sign_input{
+        display: inline-block;
+        border: none;
+        width: 360px;
+        border-radius: 5px;
+        height: 50px;
+        outline: #6ae93f;
+        color: black;
+        font-size: 18px;
+        padding-left: 10px;
+    }
+    .sign_btn{
+        width: 370px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 50px;
+        background-color: #5cc4ef;
+        border: 0;
+        border-radius: 5px;
+    }
+    .gender {
+        width: 370px;
+        height: 45px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+    }
+    .gender_2 {
+        display: inline-block;
+        margin-left: 35px;
+        margin-top: 5px;
+        width: 135px;
+        height: 35px;
+        background-color: white;
+        border-radius: 5px;
+        color:black;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        line-height: 35px;
+    }
+    .radiogen {
+        display: none;
+    }
+    .radiogen + span {
+        background-color:white;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        display: inline-block;
+        width: 135px;
+        height: 35px;
+    }
+</style>

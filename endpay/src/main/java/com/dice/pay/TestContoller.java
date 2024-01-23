@@ -29,6 +29,24 @@ public class TestContoller {
         return l;
     }
     
-    
+    @RequestMapping("nn")
+    public String fsdf(){
+    	return "login";
+    }
+    @RequestMapping("nnn")
+    public String fsddf(){
+    	return "sign";
+    }
+    @RequestMapping("nnnn")
+    public String fsddfgef(){
+    	return "main";
+    }
+    @RequestMapping("sh")
+    public String fsddgeff(){
+    	return "show";
+    }
+    @RequestMapping("sp")
+    public String fsddff(){
+    	return "spending";
+    }
 }
-//Request processing failed; nested exception is java.lang.IllegalArgumentException: No converter found for return value of type: class java.util.ArrayList

@@ -1,0 +1,281 @@
+@charset "UTF-8";
+<style>
+    * {
+        font-size: 0;
+        margin: 0;
+    }
+
+    header {
+        background-color: #5cc4ef;
+    }
+
+    .head {
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+    }
+
+    main {
+        width: 1080px;
+        height: 760px;
+        margin: 0 auto;
+        /* padding: 10px; */
+        background-color: rgba(231, 228, 228, 0.536);
+        display: flex;
+    }
+    .contents {
+        width: 840px;
+    }
+
+    .info {
+        width: 840px;
+        height: 730px;
+        margin: 15px;
+        background-color: white;
+        border-radius: 5px;
+    }
+    #input{
+        display: none;
+    }
+    .my_info {
+        width: 810px;
+        height: 100px;
+        border-radius: 5px;
+        margin: 15px;
+    }
+    .datepicker *{
+        font-size: 14px;
+    }
+    .datepicker--day-name{
+        /* color: #2d1dab; */
+        font-weight: 700;
+    }
+    .datepicker--cell{
+        height: 28px;
+    }
+    #date{
+        vertical-align: top;
+        display: inline-block;
+        margin: 15px 15px 15px 0;
+        width: 200px;
+        height: 250px;
+        border-radius: 5px;
+        background-color: #5cc4ef35;
+    }
+    .datepicker{
+        background: transparent;
+        width: 200px;
+        height: 220px;
+        border: none;
+    }
+    .date_del, .date_write{
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        display: inline-block;
+        font-size: 16px;
+        text-align: center;
+        color: #5cc4ef;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #expenseType{
+        display: inline-block;
+        width: 145px;
+        height: 135px;
+        margin: 0 15px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;
+    }
+    .radio_extype {
+        display: none;
+    }
+    .radio_extype + span {
+        margin: 5px;
+        border-radius: 5px;
+        background-color:white;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        display: inline-block;
+        width: 135px;
+        height: 35px;
+        line-height: 35px;
+        vertical-align: top;
+    }
+    #expenseContents{
+        display: inline-block;
+        vertical-align: top;
+        width: 650px;
+        height: 135px;
+        margin-right: 15px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;
+    }
+    .radio_contype{
+        display: none;
+    }
+    .radio_contype + span{
+        margin: 5px;
+        border-radius: 5px;
+        background-color:white;
+        text-align: center;
+        cursor: pointer;
+        font-size: 16px;
+        display: inline-block;
+        width: 98px;
+        height: 35px;
+        line-height: 35px;
+        vertical-align: top;
+    }
+    #detail_box{
+        vertical-align: top;
+        background-color: white;
+        border-radius: 5px;
+        display: inline-block;
+        width: 595px;
+        height: 250px;
+        margin: 15px;
+    }
+    .detail_text{
+        font-size: 16px;
+        border-radius: 5px;
+        width: 590px;
+        height: 50px;
+        background-color: #5cc4ef50;
+        margin-bottom: 15px;
+        padding-left: 5px;
+    }
+    .detail_input{
+        width: 537px;
+        height: 50px;
+        border: none;
+        font-size: 16px;
+        outline: black;
+        margin-left: 5px;
+        background-color: transparent;
+    }
+    .money{
+        display: inline-block;
+        width: 170px;
+        height: 185px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;
+        margin-right: 15px;
+        vertical-align: top;
+    }
+    .money_text{
+        font-size: 20px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+    }
+    .money_input{
+        vertical-align: top;
+        width: 170px;
+        height: 50px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        text-align: center;
+    }
+    .memo_box{
+        display: inline-block;
+        width: 410px;
+        height: 185px;
+        background-color: #5cc4ef50;
+        border-radius: 5px;  
+    }
+    .memo_text{
+        height: 30px;
+        font-size: 16px;
+        margin: 5px 5px 0 5px;
+        line-height: 30px;
+    }
+    .memo{
+        width: 400px;
+        height: 145px;
+        resize: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        overflow: hidden;
+        margin: 0 5px;
+    }
+    .statement{
+        width: 810px;
+        height: 170px;
+        border-radius: 5px;
+        background-color: #5cc4ef50;
+        margin: 0 15px 15px 15px;
+    }
+    .title_col{
+        width: 810px;
+        height: 35px;
+        border-radius: 5px;
+    }
+    .title_col > div{
+        background-color: #5cc4ef;
+        border-radius: 3px;
+    }
+    .t_date, .d_date, .d_type, .d_category, .d_money{
+        display: inline-block;
+        font-size: 18px;
+        width: 120px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .detail_contents > div{
+        background-color: #5cc4ef60;
+    }
+    .t_detail{
+        display: inline-block;
+        font-size: 18px;
+        width: 330px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .d_detail{
+        display: inline-block;
+        font-size: 18px;
+        width: 330px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: top;
+    }
+    .show_memo{
+        width: 800px;
+        height: 90px;
+        border-radius: 5px;
+        background-color: #5cc4ef20;
+        font-size:15px;
+        padding: 5px;
+    }
+    .ad{
+        display: inline-block;
+        width: 690px;
+        height: 100px;
+        border-radius: 5px;
+        background-color: #5cc4ef;
+        margin-right: 10px;
+    }
+    .btn{
+        display: inline-block;
+        width: 110px;
+        height: 100px;
+        vertical-align: top;
+        font-size: 28px;
+        border: 0;
+        background-color: #5cc;
+        border-radius: 5px;
+    }
+</style>
