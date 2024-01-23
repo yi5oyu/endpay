@@ -45,7 +45,7 @@
 </body>
 <script>
 	const xhr = new XMLHttpRequest();
-	let arr = ["nn","nnn","sh","sp"]
+	let arr = ["login","newsign","show","spending"]
 	loadContents(0)
 	function loadContents(i) {
 	    $.ajax({

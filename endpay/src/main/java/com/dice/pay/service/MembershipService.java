@@ -9,7 +9,7 @@ import com.dice.pay.repository.MemberRepository;
 
 @Service
 @Transactional
-public class MemberService {
+public class MembershipService {
 	
 	@Autowired
 	MemberRepository mr;

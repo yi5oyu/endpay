@@ -25,26 +25,6 @@ public class TestContoller {
         return l;
     }
     
-    @RequestMapping("nn")
-    public String fsdf(){
-    	return "login";
-    }
-    @RequestMapping("nnn")
-    public String fsddf(){
-    	return "sign";
-    }
-    @RequestMapping("nnnn")
-    public String fsddfgef(){
-    	return "main";
-    }
-    @RequestMapping("sh")
-    public String fsddgeff(){
-    	return "show";
-    }
-    @RequestMapping("sp")
-    public String fsddff(){
-    	return "spending";
-    }
 	/*
 	 * @GetMapping("/naver/login") public
 	 */
