@@ -12,6 +12,6 @@ public class MemberController {
 	public String memberSave(Membership member) {
 		System.out.println("save");
 		
-		return "main";
+		return "redirect:/nnnn";
 	}
 }

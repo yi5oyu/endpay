@@ -31,11 +31,12 @@
         </property>
         <property name="jpaProperties">
             <props>
+            	<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.use_sql_comments">true</prop>
                 <prop key="hibernate.id.new_generator_mappings">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
                 <!-- 기타 Hibernate 및 JPA 설정 추가 -->
             </props>
         </property>
