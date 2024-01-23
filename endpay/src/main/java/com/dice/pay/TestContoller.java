@@ -22,10 +22,6 @@ public class TestContoller {
     @ResponseBody
     public List<User> getData() {
     	List<User> l = new ArrayList();
-        User u = new User("ff","gg");
-        l.add(u);
-        u = new User("gg","hh");
-        l.add(u);
         return l;
     }
     
@@ -49,4 +45,7 @@ public class TestContoller {
     public String fsddff(){
     	return "spending";
     }
+	/*
+	 * @GetMapping("/naver/login") public
+	 */
 }

@@ -52,7 +52,6 @@
 	        type: 'GET',
 	        url: `\${arr[i]}`,
 	        success: function(response) {
-	        	console.log($(response).filter('html').html())
 	            $('.contentss').html($(response).filter('main').html());
 	        },
 	        error: function() {

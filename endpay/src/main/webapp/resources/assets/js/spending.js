@@ -1,5 +1,4 @@
-	console.log("onspending")
-    $('#input').datepicker({
+   $('#input').datepicker({
         inline: true,
         // range: true,
         multipleDatesSeparator: ' - ',

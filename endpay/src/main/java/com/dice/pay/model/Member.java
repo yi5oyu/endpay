@@ -2,7 +2,8 @@ package com.dice.pay.model;
 
 import java.util.Date;
 
-public class User {
+public class Member {
+	private Long m_id;
 	private String userid;
 	private String username;
 	private String uname;
@@ -11,6 +12,12 @@ public class User {
 	private String email;
 	private Date udate;
 	
+	public Long getM_id() {
+		return m_id;
+	}
+	public void setM_id(Long m_id) {
+		this.m_id = m_id;
+	}
 	public String getUserid() {
 		return userid;
 	}
