@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dice.pay.model.User;
+import com.dice.pay.dto.Member;
 
 @Controller
 public class TestContoller {
@@ -20,8 +20,8 @@ public class TestContoller {
 	
     @GetMapping("/data")
     @ResponseBody
-    public List<User> getData() {
-    	List<User> l = new ArrayList();
+    public List<Member> getData() {
+    	List<Member> l = new ArrayList();
         return l;
     }
     
