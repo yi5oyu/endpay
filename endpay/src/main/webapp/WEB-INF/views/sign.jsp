@@ -7,7 +7,6 @@
     <section class="contents">
         <div class="sign">
             <div class="sign_box">
-                <form method="post" action="api/members/newsign">
                 <div class="sign_title">End Pay</div>
                 <div class="sign_row">
                     <input class="sign_input" type="text" name="userid" value="test" />
@@ -37,11 +36,45 @@
                     <input class="sign_input" type="text" name="email" value="abcdef@gmail.com" />
                 </div>
                 <div class="sign_row">
-                    <button class="sign_btn" type="submit">회원가입</button>
+                    <button class="sign_btn" onclick="sendAjaxRequest()">회원가입</button>
                 </div>
-                </form>
             </div>
         </div>
     </section>
+     <script>
+     function sendAjaxRequest() {
+         // 입력값 가져오기
+         let userData = {
+             userid: $("input[name='userid']").val(),
+             userpw: $("input[name='userpw']").val(),
+             uname: $("input[name='uname']").val(),
+             gender: $("input[name='gender']:checked").val(),
+             phone: $("input[name='phone']").val(),
+             email: $("input[name='email']").val()
+         };
+     
+         // Ajax 요청
+         $.ajax({
+             type: "POST",
+             url: "api/members/newsign",
+             async : true,
+             data: JSON.stringify(userData),
+             headers: {
+                 'Accept': 'application/json;charset=UTF-8',
+                 'Content-Type': 'application/json; charset=UTF-8'
+          
+             },
+             dataType:"json",
+             success: function (response) {
+                 // 성공 시 처리
+                 console.log("Success:", response);
+             },
+             error: function (error) {
+                 // 실패 시 처리
+                 console.error("Error:", error);
+             }
+         });
+     }
+ 	</script>
 </main>
 </html>
