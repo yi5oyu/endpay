@@ -7,7 +7,7 @@
     <section class="contents">
         <div class="sign">
             <div class="sign_box">
-                <form method="post" action="api/newsign">
+                <form method="post" action="api/members/newsign">
                 <div class="sign_title">End Pay</div>
                 <div class="sign_row">
                     <input class="sign_input" type="text" name="userid" value="test" />

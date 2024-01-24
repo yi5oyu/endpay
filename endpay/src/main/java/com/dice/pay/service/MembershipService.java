@@ -18,6 +18,7 @@ public class MembershipService {
 	MembershipRepository mr;
 	
 	public Membership saveMember(Membership member) {
+		member.setUdate(new Date());
 		return mr.save(member);
 	}
 	

@@ -30,7 +30,6 @@ public class Membership {
     private Date udate;
     
     public Membership() {
-    	this.udate = new Date();
     }
     
 	public Membership(Long m_id, String userid, String userpw, String uname, String gender, String phone, String email,
