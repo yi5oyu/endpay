@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "Membership") // Å×ÀÌºí ÀÌ¸§À» ¸í½ÃÀûÀ¸·Î ÁöÁ¤
+@Table(name = "Membership") // ï¿½ï¿½ï¿½Ìºï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 public class Membership {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_seq")
@@ -28,6 +28,84 @@ public class Membership {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date udate;
+    
+    public Membership() {
+    	this.udate = new Date();
+    }
+    
+	public Membership(Long m_id, String userid, String userpw, String uname, String gender, String phone, String email,
+			Date udate) {
+		this.m_id = m_id;
+		this.userid = userid;
+		this.userpw = userpw;
+		this.uname = uname;
+		this.gender = gender;
+		this.phone = phone;
+		this.email = email;
+		this.udate = udate;
+	}
 
-    // »ý¼ºÀÚ, °ÔÅÍ, ¼¼ÅÍ µî ÇÊ¿äÇÑ ¸Þ¼­µå Ãß°¡
+	public Long getM_id() {
+		return m_id;
+	}
+
+	public String getUserid() {
+		return userid;
+	}
+
+	public String getUserpw() {
+		return userpw;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public Date getUdate() {
+		return udate;
+	}
+
+	public void setM_id(Long m_id) {
+		this.m_id = m_id;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+	public void setUserpw(String userpw) {
+		this.userpw = userpw;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setUdate(Date udate) {
+		this.udate = udate;
+	}
 }

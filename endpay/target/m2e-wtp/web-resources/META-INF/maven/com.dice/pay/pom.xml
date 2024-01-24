@@ -158,6 +158,13 @@
 		    <artifactId>spring-orm</artifactId>
 		    <version>${org.springframework-version}</version> <!-- 버전은 사용 중인 Spring 버전에 맞게 변경 -->
 		</dependency>
+		
+		<!-- Dpring Data JPA -->
+		<dependency>
+		   <groupId>org.springframework.data</groupId>
+		   <artifactId>spring-data-jpa</artifactId>
+		   <version>1.8.0.RELEASE</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
