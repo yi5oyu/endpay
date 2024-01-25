@@ -51,11 +51,10 @@
              gender: $("input[name='gender']:checked").val(),
              phone: $("input[name='phone']").val(),
              email: $("input[name='email']").val()
-         };
+         }
      
-         // Ajax 요청
          $.ajax({
-             type: "POST",
+             type: "GET",
              url: "api/members/newsign",
              async : true,
              data: JSON.stringify(userData),
@@ -67,13 +66,15 @@
              dataType:"json",
              success: function (response) {
                  // 성공 시 처리
-                 console.log("Success:", response);
+                 loadContents(0)
+                 console.log("Success:", response)
              },
              error: function (error) {
                  // 실패 시 처리
-                 console.error("Error:", error);
+                 loadContents(1)
+                 console.error("Error:", error)
              }
-         });
+         })
      }
  	</script>
 </main>

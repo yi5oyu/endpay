@@ -26,4 +26,7 @@ public class MembershipService {
 		return mr.findAll();
 	}
 	
+	public Membership login(String userid, String userpw) {
+		return mr.findByUseridAndUserpw(userid, userpw);
+	}
 }
