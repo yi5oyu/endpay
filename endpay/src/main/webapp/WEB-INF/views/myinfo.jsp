@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<body>
-<div class="my_info">
+<main>
     <div class="info_title">회원 정보</div>
     <div class="info">
         <div>회원번호</div>
@@ -24,5 +23,4 @@
         <div>가입일</div>
         <div>2024.01.26</div>
     </div>
-</div>
-</body>
+</main>

@@ -73,8 +73,30 @@ if(session.getAttribute("member") != null){
 	        type: 'GET',
 	        url: `\${arr[i]}`,
 	        success: function(response) {
-	        	console.log($(response).filter('main').html())
-	            $('.contentss').html($(response).filter('main').html());
+	        	$('.contentss').html($(response).filter('main').html());
+	        	if(arr[i]=="mypage"){
+	        		const xhr = new XMLHttpRequest();
+	        		let arr = ["myinfo","rewriteinfo"]
+	        		loadMyContents(0)
+	        		function loadMyContents(j) {
+	        		    $.ajax({
+	        		        type: 'GET',
+	        		        url: `\${arr[j]}`,
+	        		        success: function(response) {
+	        		            $('.my_info').html($(response).filter('main').html());
+	        		        },
+	        		        error: function() {
+	        		            console.error('Failed to load content.');
+	        		        }
+	        		    });
+	        		}
+	        		let a = document.querySelectorAll(".mypage")
+	        		for(let j = 0 ;j<a.length ;j++){
+	        		    a[j].addEventListener("click",function(){
+	        		    	loadMyContents(j)
+	        		    })
+	        		}
+	        	}
 	        },
 	        error: function() {
 	            console.error('Failed to load content.');

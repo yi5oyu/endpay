@@ -26,26 +26,5 @@
     </section>
 </main>
 <script>
-	const xhr = new XMLHttpRequest();
-	let arr = ["myinfo","rewriteinfo"]
-	loadContents(0)
-	function loadMyContents(i) {
-	    $.ajax({
-	        type: 'GET',
-	        url: `\${arr[i]}`,
-	        success: function(response) {
-	            $('.my_info').html($(response).filter('body').html());
-	        },
-	        error: function() {
-	            console.error('Failed to load content.');
-	        }
-	    });
-	}
-	let a = document.querySelectorAll(".mypage")
-	for(let i = 0 ;i<a.length ;i++){
-	    a[i].addEventListener("click",function(){
-	    	loadMyContents(i)
-	    })
-	}
 </script>
 </html>
