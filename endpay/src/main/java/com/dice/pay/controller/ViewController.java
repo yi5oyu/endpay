@@ -34,4 +34,12 @@ public class ViewController {
     public String viewHomepage(){
     	return "home";
     }
+    @RequestMapping("rewriteinfo")
+    public String viewRewriteInfo(){
+    	return "rewriteinfo";
+    }
+    @RequestMapping("myinfo")
+    public String viewMyInfo(){
+    	return "myinfo";
+    }
 }
