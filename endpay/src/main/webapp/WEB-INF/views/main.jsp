@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="resources/assets/css/menu.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/show.css">
+<link rel="stylesheet" type="text/css" href="resources/assets/css/mypage.css">
 <style>
 	*{
 		font-size: 0;
@@ -68,11 +69,11 @@ if(session.getAttribute("member") != null){
 	let arr = ["home","show","spending"  ,"mypage"]
 	loadContents(0)
 	function loadContents(i) {
-		console.log(i)
 	    $.ajax({
 	        type: 'GET',
 	        url: `\${arr[i]}`,
 	        success: function(response) {
+	        	console.log($(response).filter('main').html())
 	            $('.contentss').html($(response).filter('main').html());
 	        },
 	        error: function() {

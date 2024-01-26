@@ -4,10 +4,10 @@
 <html>
 <main>
     <section class="contents">
-        <div class="info">
+        <div class="info_spending">
             <form method="get" action="/api/insert">
                 회원 아이디/구분/항목/상세/날짜/금액/메모
-                <div class="my_info">
+                <div class="my_info_spending">
                     <div class="ad"></div>
                     <button class="btn" type="submit">제출</button>
                 </div>

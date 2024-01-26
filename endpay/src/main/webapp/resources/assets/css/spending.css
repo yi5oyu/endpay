@@ -27,7 +27,7 @@
         width: 840px;
     }
 
-    .info {
+    .info_spending {
         width: 840px;
         height: 730px;
         margin: 15px;
@@ -37,7 +37,7 @@
     #input{
         display: none;
     }
-    .my_info {
+    .my_info_spending {
         width: 810px;
         height: 100px;
         border-radius: 5px;
