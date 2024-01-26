@@ -39,6 +39,9 @@
         <div class="h_menu menu_btn">소비 내역서</div>
         <div class="menu_btn">지출 작성</div>
     </section>
+    <section class="contentss">
+
+    </section>
 </main>
 <script>
     let menu_btn = document.querySelectorAll(".menu_btn")
@@ -50,4 +53,62 @@
                     menu_btn[j].style.backgroundColor = "#5cc4ef80"
         })
     }
+</script>
+<script>
+    const xhr = new XMLHttpRequest();
+    let arr = ["login","sign"]
+    function loadContents(i) {
+        $.ajax({
+            type: 'GET',
+            url: `${arr[i]}.html`,
+            success: function(response) {
+                console.log(response)
+                console.log($(response).filter('main').html())
+                $('.contentss').html($(response).filter('main').html());
+            },
+            error: function() {
+                console.error('Failed to load content.');
+            }
+        });
+    }
+    let a = document.querySelectorAll(".menu_btn")
+    for(let i = 0 ;i<a.length ;i++){
+        a[i].addEventListener("click",function(){
+            loadContents(i)
+        })
+    }
+// /* 각각의 페이지에 대응되는 버튼에 클릭 이벤트를 걸어 페이지를 리로드시킴 */
+// let index = 0;
+
+// function exchangeContents() {
+//     const inputs = $('.contents');
+//     inputs.eq(0).addClass('selected_section');
+
+//     inputs.on('click', function() {
+//         const i = $(this).index();
+//         loadContents(i);
+//     });
+
+//     inputs.on('mouseover', function() {
+//         $(this).addClass('selected_section');
+//     });
+
+//     inputs.on('mouseout', function() {
+//         const i = $(this).index();
+//         if (index !== i) {
+//             $(this).removeClass('selected_section');
+//         }
+//     });
+// }
+
+// function showContents() {
+//     $(document).ready(function() {
+//         const i = 0;
+//         loadContents(i);
+//     });
+// }
+
+// // 페이지 로드 후 실행
+// showContents();
+// exchangeContents();
 </script>
