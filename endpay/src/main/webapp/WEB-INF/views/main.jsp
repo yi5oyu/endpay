@@ -10,8 +10,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/air-datepicker@2.2.3/dist/js/datepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/assets/css/header.css">
-<link rel="stylesheet" type="text/css" href="resources/assets/css/login.css">
-<link rel="stylesheet" type="text/css" href="resources/assets/css/sign.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/menu.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/show.css">
@@ -54,8 +52,11 @@ if(session.getAttribute("member") != null){
 	</header>
     <main>
     <section class="menu">
-        <div class="h_menu menu_btn">소비 내역서</div>
+        <div class="h_menu menu_btn">홈</div>
+        <div class="menu_btn">소비 내역서</div>
         <div class="menu_btn">지출 작성</div>
+        
+        <div class="menu_btn">마이 페이지</div>
     </section>
     <section class="contentss">
     
@@ -64,9 +65,10 @@ if(session.getAttribute("member") != null){
 </body>
 <script>
 	const xhr = new XMLHttpRequest();
-	let arr = ["show","spending"]
+	let arr = ["home","show","spending"  ,"mypage"]
 	loadContents(0)
 	function loadContents(i) {
+		console.log(i)
 	    $.ajax({
 	        type: 'GET',
 	        url: `\${arr[i]}`,

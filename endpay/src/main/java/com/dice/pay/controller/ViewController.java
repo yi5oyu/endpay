@@ -26,4 +26,12 @@ public class ViewController {
     public String viewSpend(){
     	return "spending";
     }
+    @RequestMapping("mypage")
+    public String viewMypage(){
+    	return "mypage";
+    }
+    @RequestMapping("home")
+    public String viewHomepage(){
+    	return "home";
+    }
 }
