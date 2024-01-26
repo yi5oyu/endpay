@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.1.0/css/datepicker.min.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -18,21 +21,37 @@
 		margin: 0;
 	}
 </style>
+<%
+if(session.getAttribute("member") != null){
+/*  Membership id = (Membership)session.getAttribute("member");
+ System.out.print("id: " + id.getUserid());  */
+}
+%>
 <body>
-    <header>
-        <div class="head">
+	<header>
+		<div class="head">
             <div class="head_box">
                 <div class="header_box"></div>
                 <div class="info_box">
-                    <div class="user_info">gebsjsd 님</div>
-                    <div class="href_info">
-                        <a class="menu_btn">로그인</a>
-                        <a class="menu_btn">회원가입</a>
-                    </div>
+                    <c:if test="${member != null}">
+                    	<div class="user_info">${member.userid}</div>
+	        			<div class="href_info">
+	                        <a class="" style="display: none">로그인</a>
+	                        <a class="" style="display: none">회원가입</a>
+	                        <a>로그아웃</a>
+	                    </div>
+    				</c:if>
+                    <c:if test="${member == null}">
+                    	<div class="user_info"></div>
+	        			<div class="href_info">
+	                        <a class="" href="login">로그인</a>
+	                        <a class="" href="newsign">회원가입</a>
+	                    </div>
+    				</c:if>
                 </div>
             </div>
         </div>
-    </header>
+	</header>
     <main>
     <section class="menu">
         <div class="h_menu menu_btn">소비 내역서</div>
@@ -45,7 +64,7 @@
 </body>
 <script>
 	const xhr = new XMLHttpRequest();
-	let arr = ["login","newsign","show","spending"]
+	let arr = ["show","spending"]
 	loadContents(0)
 	function loadContents(i) {
 	    $.ajax({
@@ -65,8 +84,6 @@
 	        loadContents(i)
 	    })
 	}
-	
-	
 </script>
 <script type="text/javascript" src="resources/assets/js/menu.js"></script>
 

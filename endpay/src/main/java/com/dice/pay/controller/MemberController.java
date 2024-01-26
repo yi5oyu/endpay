@@ -2,12 +2,13 @@ package com.dice.pay.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,18 +38,23 @@ public class MemberController {
 	}
 	
 	@GetMapping("/login")
-	public ResponseEntity<Message> login(
+	public ResponseEntity<Message> login(HttpSession session,
 			@RequestParam String userid,
 			@RequestParam String userpw){
-		System.out.println("in");
-		if(ms.login(userid, userpw) != null) {
-			return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),ms.login(userid, userpw)),HttpStatus.OK);
-		} else
-			return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),ms.login(userid, userpw)),HttpStatus.UNAUTHORIZED);
+			Membership member = ms.login(userid, userpw);
+			if(member != null) {
+				session.setAttribute("member", member);
+				return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),ms.login(userid, userpw)),HttpStatus.OK);
+			} else
+				return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),ms.login(userid, userpw)),HttpStatus.UNAUTHORIZED);
 	}
 	
-	@PutMapping("f")
-	public String gme() {
-		return "gd";
-	}
+//	@GetMapping("/login")
+//	public String login(HttpSession session,
+//		@RequestParam String userid,
+//		@RequestParam String userpw){
+//		return "endpay";
+//	}
+
+
 }

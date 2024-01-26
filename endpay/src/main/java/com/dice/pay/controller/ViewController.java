@@ -14,7 +14,7 @@ public class ViewController {
     public String viewSign(){
     	return "sign";
     }
-    @RequestMapping("main")
+    @RequestMapping("endpay")
     public String viewMain(){
     	return "main";
     }
