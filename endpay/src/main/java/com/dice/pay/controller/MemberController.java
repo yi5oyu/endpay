@@ -28,7 +28,6 @@ public class MemberController {
 	@Autowired
 	MembershipService ms;
 	
-	
 	@PostMapping("/newsign")
 	public Membership memberSave(
 			@RequestBody Membership member) {
@@ -56,13 +55,12 @@ public class MemberController {
     public void updateMember(HttpSession session,
             @RequestBody Membership member) {
 		ms.updateMember(member);
-		session.setAttribute("member", ms.findMember(member.getUserid()));
+		session.setAttribute("member", ms.findMember(member.getMid()));
     }
 	
-	@DeleteMapping("/delete/{userid}")
+	@DeleteMapping("/delete/{mid}")
 	public void deleteMember(
-			@PathVariable String userid) {
-		System.out.println(userid);
-		ms.deleteMember(userid);
+			@PathVariable Long mid) {
+		ms.deleteMember(mid);
 	}
 }

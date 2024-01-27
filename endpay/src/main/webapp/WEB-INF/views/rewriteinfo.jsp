@@ -8,7 +8,7 @@
     <div class="info_title">사용자 정보 수정</div>
     <div class="info">
         <div>회원번호</div>
-        <div>${member.m_id}</div>
+        <div class="mid">${member.mid}</div>
         <div>아이디</div>
         <div><input class="info_input" type="text" name="userid" value="${member.userid}"/></div>
         <div>비밀번호</div>
@@ -20,7 +20,7 @@
         <div>이메일</div>
         <div><input class="info_input" type="text" name="email" value="${member.email}"/></div>
         <div>회원 등급</div>
-        <div>GUEST</div>
+        <div>${member.grade}</div>
         <div>성별</div>
         <div>${member.gender}</div>
         <div>가입일</div>
@@ -34,6 +34,7 @@
     	function rewrite(){
     		// ajax로 controller에 info_input value들 전달
     		let userData = {
+ 			mid: $(".mid").text(),
             userid: $("input[name='userid']").val(),
             userpw: $("input[name='userpw']").val(),
             uname: $("input[name='uname']").val(),
@@ -48,16 +49,13 @@
                 headers: {
                     'Accept': 'application/json;charset=UTF-8',
                     'Content-Type': 'application/json; charset=UTF-8'
-             
                 },
                 dataType:"json",
                 success: function (response) {
-                    // 성공 시 처리
                     alert("수정 성공")
                     console.log("Success:", response)
                 },
                 error: function (error) {
-                    // 실패 시 처리
                     alert("수정 실패")
                     console.error("Error:", error)
                 }
@@ -66,10 +64,10 @@
     	
     	function deletebyid(){
     		// ajax로 controller에 info_input value들 전달
-    		let userid = encodeURIComponent($("input[name='userid']").val())
+    		let mid = $(".mid").text()
             $.ajax({
                 type: "DELETE",
-                url: "api/members/delete/"+userid,
+                url: "api/members/delete/"+mid,
                 async : true,
                 success: function (response) {
                     // 성공 시 처리

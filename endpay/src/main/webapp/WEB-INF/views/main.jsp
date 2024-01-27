@@ -53,11 +53,16 @@ if(session.getAttribute("member") != null){
 	</header>
     <main>
     <section class="menu">
-        <div class="h_menu menu_btn">홈</div>
-        <div class="menu_btn">소비 내역서</div>
-        <div class="menu_btn">지출 작성</div>
-        
-        <div class="menu_btn">마이 페이지</div>
+    	<c:if test="${member != null}">
+	        <div class="h_menu menu_btn">홈</div>
+	        <div class="menu_btn">소비 내역서</div>
+	        <div class="menu_btn">지출 작성</div>
+	        
+	        <div class="menu_btn">마이 페이지</div>
+        </c:if>
+        <c:if test="${member == null}">
+    		<div class="h_menu menu_btn">홈</div>
+    	</c:if>
     </section>
     <section class="contentss">
     

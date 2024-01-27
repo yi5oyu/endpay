@@ -17,12 +17,13 @@ public class MembershipService {
 	@Autowired
 	MembershipRepository mr;
 	
-	public Membership findMember(String userid) {
-		return mr.findByUserid(userid);
+	public Membership findMember(Long mid) {
+		return mr.findByMid(mid);
 	}
 	
 	public Membership saveMember(Membership member) {
 		member.setUdate(new Date());
+		member.setGrade("GUEST");
 		return mr.save(member);
 	}
 	
@@ -35,7 +36,7 @@ public class MembershipService {
 	}
 	
 	public Membership updateMember(Membership member) {
-		Membership updateMember = mr.findByUserid(member.getUserid());
+		Membership updateMember = mr.findByMid(member.getMid());
 		if(updateMember != null) {
 			updateMember.setUserid(member.getUserid());
 			updateMember.setUserpw(member.getUserpw());
@@ -44,14 +45,14 @@ public class MembershipService {
 			updateMember.setEmail(member.getEmail());
 			return mr.save(updateMember);
 		} else 
-			throw new RuntimeException("ID가 " + member.getUserid() + "인 회원을 찾을 수 없습니다.");
+			throw new RuntimeException("ID가 " + member.getMid() + "인 회원을 찾을 수 없습니다.");
 	}
 	
-	public void deleteMember(String userid) {
-		Membership member = mr.findByUserid(userid);
+	public void deleteMember(Long mid) {
+		Membership member = mr.findByMid(mid);
 	    if (member != null) {
 	        mr.delete(member);
 	    } else 
-	        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + userid);
+	        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + mid);
 	}
 }

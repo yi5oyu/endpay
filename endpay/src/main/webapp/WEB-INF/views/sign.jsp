@@ -62,12 +62,12 @@
              headers: {
                  'Accept': 'application/json;charset=UTF-8',
                  'Content-Type': 'application/json; charset=UTF-8'
-          
              },
              dataType:"json",
              success: function (response) {
                  // 성공 시 처리
-                 alert("성공")
+                 alert("회원 가입 성공")
+                 window.location.href = "login"
                  console.log("Success:", response)
              },
              error: function (error) {

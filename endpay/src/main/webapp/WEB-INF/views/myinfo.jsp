@@ -8,7 +8,7 @@
     <div class="info_title">회원 정보</div>
     <div class="info">
         <div>회원번호</div>
-        <div>${member.m_id}</div>
+        <div>${member.mid}</div>
         <div>아이디</div>
         <div>${member.userid}</div>
         <div>비밀번호</div>
@@ -20,7 +20,7 @@
         <div>이메일</div>
         <div>${member.email}</div>
         <div>회원 등급</div>
-        <div>GUEST</div>
+        <div>${member.grade}</div>
         <div>성별</div>
         <div>${member.gender}</div>
         <div>가입일</div>

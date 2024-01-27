@@ -7,8 +7,8 @@
         <div class="main">
             <div class="my_menu">
                 <div class="my_name">
-                    <div>idwjkvnw</div>
-                    <div>GUEST</div>
+                    <div>${member.userid}</div>
+                    <div>${member.grade}</div>
                 </div>
                 <div class="my_home mypage">
                     MY 홈

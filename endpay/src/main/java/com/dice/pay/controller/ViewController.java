@@ -43,7 +43,7 @@ public class ViewController {
     }
     @RequestMapping("myinfo")
     public String viewMyInfo(){
-    	return "myin fo";
+    	return "myinfo";
     }
     @RequestMapping("logout")
     public String logout(HttpSession session) {

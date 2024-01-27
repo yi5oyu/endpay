@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.dice.pay.entity.Membership;
 
 public interface MembershipRepository extends JpaRepository<Membership, Long> {
-	Membership findByUserid(String userid);
+	Membership findByMid(Long mid);
 	
 	Membership findByUseridAndUserpw(String userid, String userpw);
 }
