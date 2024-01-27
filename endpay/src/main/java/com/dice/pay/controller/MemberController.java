@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,5 +57,11 @@ public class MemberController {
 //		return "endpay";
 //	}
 
-
+	@PutMapping("/update")
+    public void updateMember(HttpSession session,
+            @RequestBody Membership member) {
+		ms.updateMember(member);
+		session.setAttribute("member", ms.findMember(member.getUserid()));
+    }
+	
 }

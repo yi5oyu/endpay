@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/assets/css/sign.css">
 <main>
     <section class="contents">
@@ -54,7 +55,7 @@
          }
      
          $.ajax({
-             type: "GET",
+             type: "POST",
              url: "api/members/newsign",
              async : true,
              data: JSON.stringify(userData),
@@ -66,12 +67,12 @@
              dataType:"json",
              success: function (response) {
                  // 성공 시 처리
-                 loadContents(0)
+                 alert("성공")
                  console.log("Success:", response)
              },
              error: function (error) {
                  // 실패 시 처리
-                 loadContents(1)
+                 alert("실패")
                  console.error("Error:", error)
              }
          })

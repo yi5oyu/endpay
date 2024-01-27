@@ -17,6 +17,10 @@ public class MembershipService {
 	@Autowired
 	MembershipRepository mr;
 	
+	public Membership findMember(String userid) {
+		return mr.findByUserid(userid);
+	}
+	
 	public Membership saveMember(Membership member) {
 		member.setUdate(new Date());
 		return mr.save(member);
@@ -28,5 +32,19 @@ public class MembershipService {
 	
 	public Membership login(String userid, String userpw) {
 		return mr.findByUseridAndUserpw(userid, userpw);
+	}
+	
+	public Membership updateMember(Membership member) {
+		Membership updateMember = mr.findByUserid(member.getUserid());
+		if(updateMember != null) {
+			updateMember.setUserid(member.getUserid());
+			updateMember.setUserpw(member.getUserpw());
+			updateMember.setUname(member.getUname());
+			updateMember.setPhone(member.getPhone());
+			updateMember.setEmail(member.getEmail());
+			return mr.save(updateMember);
+		} else {
+			throw new RuntimeException("ID가 " + member.getUserid() + "인 회원을 찾을 수 없습니다.");
+		}
 	}
 }
