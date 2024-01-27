@@ -1,6 +1,9 @@
 package com.dice.pay.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -41,5 +44,10 @@ public class ViewController {
     @RequestMapping("myinfo")
     public String viewMyInfo(){
     	return "myinfo";
+    }
+    @RequestMapping("logout")
+    public String logout(HttpSession session) {
+    	session.removeAttribute("member");
+        return "redirect:/login";
     }
 }

@@ -37,7 +37,7 @@ if(session.getAttribute("member") != null){
 	        			<div class="href_info">
 	                        <a class="" style="display: none">로그인</a>
 	                        <a class="" style="display: none">회원가입</a>
-	                        <a>로그아웃</a>
+	                        <a href="logout">로그아웃</a>
 	                    </div>
     				</c:if>
                     <c:if test="${member == null}">

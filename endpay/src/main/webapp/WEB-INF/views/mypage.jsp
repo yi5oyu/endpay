@@ -17,14 +17,17 @@
                     <div class="setting_title">계정 설정</div>
                     <div class="setting_info mypage">회원 정보</div>
                 </div>
-                <div class="my_home">로그아웃</div>
+                <div class="my_home logout">로그아웃</div>
             </div>
             <div class="my_info">
 
             </div>
         </div>
     </section>
+    <script>
+    	document.querySelector(".logout").addEventListener("click", function(){
+    		window.location.href="logout"
+    	})
+	</script>
 </main>
-<script>
-</script>
 </html>

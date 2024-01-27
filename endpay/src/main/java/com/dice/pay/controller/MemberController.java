@@ -51,13 +51,6 @@ public class MemberController {
 			} else
 				return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),ms.login(userid, userpw)),HttpStatus.UNAUTHORIZED);
 	}
-	
-//	@GetMapping("/login")
-//	public String login(HttpSession session,
-//		@RequestParam String userid,
-//		@RequestParam String userpw){
-//		return "endpay";
-//	}
 
 	@PutMapping("/update")
     public void updateMember(HttpSession session,
