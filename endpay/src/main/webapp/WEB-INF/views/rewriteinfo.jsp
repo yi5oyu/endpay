@@ -27,7 +27,7 @@
         <div>${member.udate}</div>
     </div>
     <div class="info_btn_box">
-    	<button class="info_submit_btn" onclick="rewrite()">버튼</button>
+    	<button class="info_submit_btn" onclick="rewrite()">수정</button>
     </div>
     <script>
     	function rewrite(){
