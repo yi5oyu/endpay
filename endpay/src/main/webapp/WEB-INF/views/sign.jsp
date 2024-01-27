@@ -59,13 +59,11 @@
                      span[1].style.backgroundColor = "#1ac333"
                      span[0].style.backgroundColor = "white"
                  }
-                     
              })
          }
      }
      
      function sendAjaxRequest() {
-         // 입력값 가져오기
          let userData = {
              userid: $("input[name='userid']").val(),
              userpw: $("input[name='userpw']").val(),
@@ -86,13 +84,11 @@
              },
              dataType:"json",
              success: function (response) {
-                 // 성공 시 처리
                  alert("회원 가입 성공")
                  window.location.href = "login"
                  console.log("Success:", response)
              },
              error: function (error) {
-                 // 실패 시 처리
                  alert("실패")
                  console.error("Error:", error)
              }

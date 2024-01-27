@@ -13,7 +13,13 @@ import javax.persistence.Table;
 @Table(name = "Spending")
 public class Spending {
 
-    @Id
+	@Override
+	public String toString() {
+		return "Spending [sid=" + sid + ", membership=" + membership + ", extype=" + extype + ", contype=" + contype
+				+ ", sdate=" + sdate + ", money=" + money + ", detailtext=" + detailtext + ", memo=" + memo + "]";
+	}
+
+	@Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spending_seq")
     @SequenceGenerator(name = "spending_seq", sequenceName = "S_SEQ", allocationSize = 1)
     private Long sid;
@@ -22,89 +28,77 @@ public class Spending {
     @JoinColumn(name = "mid", nullable = false)
     private Membership membership;
 
-    private String exType;
-    private String conType;
-    private String sDate;
+    private String extype;
+    private String contype;
+    private String sdate;
     private String money;
-    private String detailText;
+    private String detailtext;
     private String memo;
 
     public Spending() {
     }
 
-    public Spending(Long sid, Membership membership, String exType, String conType, String sDate, String money,
-                    String detailText, String memo) {
-        this.sid = sid;
-        this.membership = membership;
-        this.exType = exType;
-        this.conType = conType;
-        this.sDate = sDate;
-        this.money = money;
-        this.detailText = detailText;
-        this.memo = memo;
-    }
+	public Long getSid() {
+		return sid;
+	}
 
-    public Long getSid() {
-        return sid;
-    }
+	public void setSid(Long sid) {
+		this.sid = sid;
+	}
 
-    public Membership getMembership() {
-        return membership;
-    }
+	public Membership getMembership() {
+		return membership;
+	}
 
-    public String getExType() {
-        return exType;
-    }
+	public void setMembership(Membership membership) {
+		this.membership = membership;
+	}
 
-    public String getConType() {
-        return conType;
-    }
+	public String getExtype() {
+		return extype;
+	}
 
-    public String getsDate() {
-        return sDate;
-    }
+	public void setExtype(String extype) {
+		this.extype = extype;
+	}
 
-    public String getMoney() {
-        return money;
-    }
+	public String getContype() {
+		return contype;
+	}
 
-    public String getDetailText() {
-        return detailText;
-    }
+	public void setContype(String contype) {
+		this.contype = contype;
+	}
 
-    public String getMemo() {
-        return memo;
-    }
+	public String getSdate() {
+		return sdate;
+	}
 
-    public void setSid(Long sid) {
-        this.sid = sid;
-    }
+	public void setSdate(String sdate) {
+		this.sdate = sdate;
+	}
 
-    public void setMembership(Membership membership) {
-        this.membership = membership;
-    }
+	public String getMoney() {
+		return money;
+	}
 
-    public void setExType(String exType) {
-        this.exType = exType;
-    }
+	public void setMoney(String money) {
+		this.money = money;
+	}
 
-    public void setConType(String conType) {
-        this.conType = conType;
-    }
+	public String getDetailtext() {
+		return detailtext;
+	}
 
-    public void setsDate(String sDate) {
-        this.sDate = sDate;
-    }
+	public void setDetailtext(String detailtext) {
+		this.detailtext = detailtext;
+	}
 
-    public void setMoney(String money) {
-        this.money = money;
-    }
+	public String getMemo() {
+		return memo;
+	}
 
-    public void setDetailText(String detailText) {
-        this.detailText = detailText;
-    }
-
-    public void setMemo(String memo) {
-        this.memo = memo;
-    }
+	public void setMemo(String memo) {
+		this.memo = memo;
+	}
 }
