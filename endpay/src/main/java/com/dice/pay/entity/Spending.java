@@ -16,10 +16,10 @@ public class Spending {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "spending_seq")
     @SequenceGenerator(name = "spending_seq", sequenceName = "S_SEQ", allocationSize = 1)
-    private Long s_id;
+    private Long sid;
 
     @ManyToOne
-    @JoinColumn(name = "m_id", nullable = false)
+    @JoinColumn(name = "mid", nullable = false)
     private Membership membership;
 
     private String exType;
@@ -32,9 +32,9 @@ public class Spending {
     public Spending() {
     }
 
-    public Spending(Long s_id, Membership membership, String exType, String conType, String sDate, String money,
+    public Spending(Long sid, Membership membership, String exType, String conType, String sDate, String money,
                     String detailText, String memo) {
-        this.s_id = s_id;
+        this.sid = sid;
         this.membership = membership;
         this.exType = exType;
         this.conType = conType;
@@ -44,8 +44,8 @@ public class Spending {
         this.memo = memo;
     }
 
-    public Long getS_id() {
-        return s_id;
+    public Long getSid() {
+        return sid;
     }
 
     public Membership getMembership() {
@@ -76,8 +76,8 @@ public class Spending {
         return memo;
     }
 
-    public void setS_id(Long s_id) {
-        this.s_id = s_id;
+    public void setSid(Long sid) {
+        this.sid = sid;
     }
 
     public void setMembership(Membership membership) {
