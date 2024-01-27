@@ -45,6 +45,10 @@ public class ViewController {
     public String viewMyInfo(){
     	return "myinfo";
     }
+    @RequestMapping("myspending")
+    public String viewMySpending(){
+    	return "myspending";
+    }
     @RequestMapping("logout")
     public String logout(HttpSession session) {
     	session.removeAttribute("member");

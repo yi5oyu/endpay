@@ -10,12 +10,11 @@
                     <div>${member.userid}</div>
                     <div>${member.grade}</div>
                 </div>
-                <div class="my_home mypage">
-                    MY 홈
-                </div>
+                <div class="my_home mypage">MY 홈</div>
                 <div class="my_setting">
                     <div class="setting_title">계정 설정</div>
                     <div class="setting_info mypage">회원 정보</div>
+                    <div class="setting_info mypage">소비 기록</div>
                 </div>
                 <div class="my_home logout">로그아웃</div>
             </div>

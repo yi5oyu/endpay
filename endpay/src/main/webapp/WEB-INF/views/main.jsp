@@ -81,7 +81,7 @@ if(session.getAttribute("member") != null){
 	        	$('.contentss').html($(response).filter('main').html());
 	        	if(arr[i]=="mypage"){
 	        		const xhr = new XMLHttpRequest();
-	        		let arr = ["myinfo","rewriteinfo"]
+	        		let arr = ["myinfo","rewriteinfo","myspending"]
 	        		loadMyContents(0)
 	        		function loadMyContents(j) {
 	        		    $.ajax({
