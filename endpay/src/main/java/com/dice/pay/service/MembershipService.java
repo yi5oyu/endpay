@@ -43,8 +43,15 @@ public class MembershipService {
 			updateMember.setPhone(member.getPhone());
 			updateMember.setEmail(member.getEmail());
 			return mr.save(updateMember);
-		} else {
+		} else 
 			throw new RuntimeException("ID가 " + member.getUserid() + "인 회원을 찾을 수 없습니다.");
-		}
+	}
+	
+	public void deleteMember(String userid) {
+		Membership member = mr.findByUserid(userid);
+	    if (member != null) {
+	        mr.delete(member);
+	    } else 
+	        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + userid);
 	}
 }

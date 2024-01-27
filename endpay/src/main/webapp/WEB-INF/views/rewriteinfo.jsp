@@ -28,6 +28,7 @@
     </div>
     <div class="info_btn_box">
     	<button class="info_submit_btn" onclick="rewrite()">수정</button>
+    	<button class="info_submit_btn" onclick="deletebyid()">삭제</button>
     </div>
     <script>
     	function rewrite(){
@@ -58,6 +59,26 @@
                 error: function (error) {
                     // 실패 시 처리
                     alert("수정 실패")
+                    console.error("Error:", error)
+                }
+            })
+    	}
+    	
+    	function deletebyid(){
+    		// ajax로 controller에 info_input value들 전달
+    		let userid = encodeURIComponent($("input[name='userid']").val())
+            $.ajax({
+                type: "DELETE",
+                url: "api/members/delete/"+userid,
+                async : true,
+                success: function (response) {
+                    // 성공 시 처리
+                    alert("삭제 성공")
+                    console.log("Success:", response)
+                },
+                error: function (error) {
+                    // 실패 시 처리
+                    alert("삭제 실패")
                     console.error("Error:", error)
                 }
             })
