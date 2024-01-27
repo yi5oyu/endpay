@@ -8,7 +8,7 @@
     <section class="contents">
         <div class="sign">
             <div class="sign_box">
-                <div class="sign_title">End Pay</div>
+                <a href="login" class="sign_title">End Pay</a>
                 <div class="sign_row">
                     <input class="sign_input" type="text" name="userid" value="test" />
                 </div>
@@ -22,11 +22,11 @@
                     <div class="gender">
                         <label class="gender_2">
                             <input class="radiogen" type="radio" name="gender" value="남자" checked>
-                            <span>남자</span>
+                            <span class="radio_span">남자</span>
                         </label>
                         <label class="gender_2">
                             <input class="radiogen" type="radio" name="gender" value="여자">
-                            <span>여자</span>
+                            <span class="radio_span">여자</span>
                         </label>                
                     </div>
                 </div>
@@ -43,6 +43,27 @@
         </div>
     </section>
      <script>
+     radioEvent()
+     function radioEvent() {
+         let gender = document.querySelectorAll(".gender_2")
+         let radio = document.querySelectorAll(".radiogen")
+         let span = document.querySelectorAll(".radio_span")
+         for(let i = 0 ;i<gender.length ;i++){
+             gender[i].addEventListener("click",function(){
+                 radio[i].checked = true
+                 if(i==0){
+                     span[0].style.backgroundColor = "#1ac333"
+                     span[1].style.backgroundColor = "white"
+                 }
+                 else{
+                     span[1].style.backgroundColor = "#1ac333"
+                     span[0].style.backgroundColor = "white"
+                 }
+                     
+             })
+         }
+     }
+     
      function sendAjaxRequest() {
          // 입력값 가져오기
          let userData = {

@@ -95,4 +95,20 @@
         font-size: 20px;
         text-align: center;
     }
+    .login_a{
+        display: flex;
+        justify-content: space-between;
+    }
+    .login_a > a{
+        display: inline-block;
+        font-size: 16px;
+    	text-decoration: none;
+        height: 40px;
+        line-height: 40px;
+        background-color: #5cc4ef;
+        width: 85px;
+        text-align: center;
+        border-radius: 5px;
+        color: black;
+    }
 </style>

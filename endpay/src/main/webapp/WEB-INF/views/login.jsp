@@ -13,14 +13,15 @@
              <div class="login_row">
                  <input class="login_input" type="text" name="userpw" placeholder="비밀번호" />
              </div>
-             <div class="login_row">
-             	 <a href="endpay">메인으로</a>
+             <div class="login_row login_a">
+             	 <a href="endpay">홈</a>
                  <a href="newsign">회원가입</a>
              </div>
              <div class="login_row">
                  <button class="login_btn" onclick="sendAjaxRequest()">로그인</button>
              </div>
             <div class="login_row sns_btns">
+<!--             
                 <a href="/naver/login" class="sns_btn naver_bg">
                     <span class="naver_icon">N</span>
                 </a>
@@ -30,12 +31,12 @@
                 <a href="/google/login" class="sns_btn google_bg">
                     <span class="google_icon">G</span>
                 </a>
+-->
             </div>
         </div>
     </div>
-         <script>
+    <script>
      function sendAjaxRequest() {
-         // 입력값 가져오기
          let userData = 
              "userid="+$("input[name='userid']").val()+
              "&userpw="+$("input[name='userpw']").val()
