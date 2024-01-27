@@ -19,7 +19,7 @@
     }
     .info{
         width: 560px;
-        height: 630px;
+        height: 540px;
         margin-left: 25px;
     }
     .info > div{
@@ -48,8 +48,23 @@
         border: 0;
         background-color: transparent;
     }
+    .info_btn_box{
+        display: inline-block;
+        width: 565px;
+        height: 60px;
+        margin: 10px 0;
+        background-color: black;
+	}
+	.info_submit_btn{
+        border: 0;
+        background-color: #5cc4ef;
+        width: 50px;
+        height: 30px;
+        border-radius: 5px;
+        margin: 15px;
+        float: right;
+	}
 </style>
-
 <div class="my_info">
     <div class="info_title">사용자 정보 수정</div>
     <div class="info">
@@ -71,5 +86,8 @@
         <div>남자</div>
         <div>가입일</div>
         <div>2024.01.26</div>
+    </div>
+    <div class="info_btn_box">
+    	<button class="info_submit_btn" onclick="rewrite()">버튼</button>
     </div>
 </div>
