@@ -11,11 +11,11 @@
                     <button class="btn" onclick="spendingAjaxRequest()">제출</button>
                 </div>
                 <div id="expenseType">
-                    <input class="radio_extype" type="radio" name="extype" value="regular" checked>
+                    <input class="radio_extype" type="radio" name="extype" value="정기지출" checked>
                     <span>정기지출</span>
-                    <input class="radio_extype" type="radio" name="extype" value="irregular">
+                    <input class="radio_extype" type="radio" name="extype" value="비정기지출">
                     <span>비정기지출</span>
-                    <input class="radio_extype" type="radio" name="extype" value="saving">
+                    <input class="radio_extype" type="radio" name="extype" value="저축">
                     <span>저축</span>
                 </div>
                 <div id="expenseContents">
