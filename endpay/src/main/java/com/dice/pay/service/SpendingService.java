@@ -3,6 +3,8 @@ package com.dice.pay.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,12 @@ public class SpendingService {
 	public List<Spending> allSpendings(){
 		return sr.findAll();
 	}
+	
+	public Page<Spending> midSpendings(Long mid, Pageable pageable){
+		System.out.println(mid);
+		return sr.findByMembershipMid(mid, pageable);
+	}
+	
 //	
 //	public Membership login(String userid, String userpw) {
 //		return mr.findByUseridAndUserpw(userid, userpw);

@@ -1,6 +1,7 @@
 package com.dice.pay.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,9 +25,9 @@ public class Spending {
     @SequenceGenerator(name = "spending_seq", sequenceName = "S_SEQ", allocationSize = 1)
     private Long sid;
 
-    @ManyToOne
-    @JoinColumn(name = "mid", nullable = false)
-    private Membership membership;
+	@ManyToOne
+	@JoinColumn(name = "mid", nullable = false)
+	private Membership membership;
 
     private String extype;
     private String contype;
