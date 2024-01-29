@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,7 +44,7 @@ public class SpendController {
 	}
 	
 	@GetMapping("/list/{mid}")
-	public Page<Spending> getMidSpendings(
+	public Page<Spending> getSpendingList(
 			@PathVariable Long mid,
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "10") int size){
@@ -51,6 +52,13 @@ public class SpendController {
 		Pageable pageable = new PageRequest(page, size);
 
 		return ss.midSpendings(mid, pageable);
+	}
+	
+	
+	@DeleteMapping("/delete")
+	public void deleteSpending(
+			@RequestBody List<Long> sids) {
+		ss.deleteSpending(sids);
 	}
 	
 //	
@@ -73,9 +81,5 @@ public class SpendController {
 //		session.setAttribute("member", ms.findMember(member.getMid()));
 //    }
 //	
-//	@DeleteMapping("/delete/{mid}")
-//	public void deleteMember(
-//			@PathVariable Long mid) {
-//		ms.deleteMember(mid);
-//	}
+
 }

@@ -53,11 +53,14 @@ public class SpendingService {
 //			throw new RuntimeException("ID가 " + member.getMid() + "인 회원을 찾을 수 없습니다.");
 //	}
 //	
-//	public void deleteMember(Long mid) {
-//		Membership member = mr.findByMid(mid);
-//	    if (member != null) {
-//	        mr.delete(member);
-//	    } else 
-//	        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + mid);
-//	}
+	public void deleteSpending(List<Long> sids) {
+		for(Long sid: sids) {
+			Spending spending = sr.findBySid(sid);
+		    if (spending != null) {
+		    	System.out.println("삭제완료");
+		        sr.delete(spending);
+		    } else 
+		        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + sid);	
+		}
+	}
 }

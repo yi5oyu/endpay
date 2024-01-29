@@ -33,8 +33,8 @@ public class Membership {
     @Temporal(TemporalType.TIMESTAMP)
     private Date udate;
     
-    @OneToMany(mappedBy = "membership", cascade = CascadeType.ALL)
-    private List<Spending> spendings;
+//    @OneToMany(mappedBy = "membership", cascade = CascadeType.ALL)
+//    private List<Spending> spendings;
     
     public Membership() {
     }

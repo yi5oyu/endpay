@@ -25,19 +25,17 @@
             </div>
         </div>
         <div class="spend_footer" id="spend_btns">
-            <button class="spend_btn">수정</button>
+            <button class="spend_btn" id="spend_delBtn">삭제</button>
         </div>
 <script>
         $(document).ready(function() {
-            // 페이지 로딩 시 데이터 가져오기
-            loadData(0);
+            loadData(0)
 
-            // 페이지 번호 클릭 시 데이터 가져오기
             $(document).on('click', '.pagination a', function(e) {
-                e.preventDefault();
-                var page = $(this).text();
-                loadData(page - 1);
-            });
+                e.preventDefault()
+                let page = $(this).text()
+                loadData(page - 1)
+            })
 
             function loadData(page) {
                 $.ajax({
@@ -45,20 +43,18 @@
                     type: 'GET',
                     dataType: 'json',
                     success: function(data) {
-                        // 데이터 출력
-                        displayData(data.content);
+                        displayData(data.content)
 
-                        // 페이지 번호 출력
-                        displayPagination(data.totalPages);
+                        displayPagination(data.totalPages)
                     },
                     error: function(error) {
-                        console.error('Error fetching data:', error);
+                        console.error('Error fetching data:', error)
                     }
-                });
+                })
             }
 
             function displayData(data) {
-                var rowsHtml = '';
+            	let rowsHtml = ''
                 $.each(data, function(index, spending) {
                     rowsHtml += '<div class="spend_row">';
                     rowsHtml += '<input type="checkbox" name="spendIds" value="' + spending.sid + '">';
@@ -67,17 +63,46 @@
                     rowsHtml += '<div class="spend_ex spend_row_margin">' + spending.extype + '</div>';
                     rowsHtml += '<div class="spend_con spend_row_margin">' + spending.contype + '</div>';
                     rowsHtml += '</div>';
-                });
-                $('#spendRows').html(rowsHtml);
+                })
+                $('#spendRows').html(rowsHtml)
             }
 
             function displayPagination(totalPages) {
-                var paginationHtml = '';
-                for (var i = 1; i <= totalPages; i++) {
-                    paginationHtml += '<a href="#">' + i + '</a>';
-                }
-                $('.pagination').html(paginationHtml);
+            	let paginationHtml = ''
+                for (let i = 1; i <= totalPages; i++) 
+                    paginationHtml += '<a href="#">' + i + '</a>'
+                
+                $('.pagination').html(paginationHtml)
             }
-        });
-    </script>
+            spend_Del_Event()
+        })
+function spend_Del_Event(){
+    $("#spend_delBtn").click(function() {
+        let selectedSids = []
+        
+        $("input:checkbox[name=spendIds]:checked").each(function() {
+            selectedSids.push($(this).val())
+        })
+        
+        if (selectedSids.length > 0) {
+            $.ajax({
+                type: "DELETE",
+                url: "api/spending/delete",
+                data: JSON.stringify(selectedSids),
+                contentType: "application/json",
+                success: function() {
+                    alert("삭제되었습니다.")
+                    location.reload()
+                },
+                error: function(error) {
+                    alert("삭제에 실패했습니다.")
+                    console.log(error)
+                }
+            })
+        } else {
+            alert("삭제할 항목을 선택해주세요.")
+        }
+    })	
+}
+</script>
 </main>
