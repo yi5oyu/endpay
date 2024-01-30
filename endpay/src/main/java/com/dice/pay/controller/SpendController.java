@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,11 +48,32 @@ public class SpendController {
 	public Page<Spending> getSpendingList(
 			@PathVariable Long mid,
 			@RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "10") int size){
-		System.out.println(mid);
-		Pageable pageable = new PageRequest(page, size);
-
-		return ss.midSpendings(mid, pageable);
+			@RequestParam(defaultValue = "10") int size,
+			@RequestParam(defaultValue = "sdate") String sort,
+			@RequestParam(defaultValue = "DESC") String title){
+		
+		System.out.println("gdgsd"+ sort);
+		System.out.println("gdgdd"+ title);
+		if(title.equals("DESC")) {
+			Pageable pageable = PageRequest.of(page, size, Sort.by(sort).descending());
+			return ss.midSpendings(mid, pageable);
+		} else {
+			Pageable pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
+			return ss.midSpendings(mid, pageable);
+		}
+		
+//		if(sort.equals("none")){
+//			Pageable pageable = new PageRequest(page, size);
+//			return ss.midSpendings(mid, pageable);
+//		} else {
+//			if(sort.equals("DESC")) {
+//				Pageable pageable = new PageRequest(page, size, Sort.Direction.DESC, title);
+//				return ss.midSpendings(mid, pageable);
+//			} else {
+//				Pageable pageable = new PageRequest(page, size, Sort.Direction.ASC, title);
+//				return ss.midSpendings(mid, pageable);
+//			}
+//		}
 	}
 	
 	

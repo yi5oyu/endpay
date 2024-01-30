@@ -273,4 +273,9 @@
 	    border-radius: 5px;
 	    cursor: pointer;
 	}
+	.spend_sort{
+	    display: none;
+	    font-size: 16px;
+	    float: right;
+	}
 </style>

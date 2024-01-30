@@ -6,14 +6,26 @@
 <!DOCTYPE html>
 <main>
  <div class="spend_head">
-            <div class="spend_title">소비 기록</div>
+      	<div class="spend_title">소비 기록</div>
         </div>
         <div class="spend_main">
             <div class="spend_main_title">
-                <div class="spend_date spend_row_head" id="spend_head_margin">날 짜</div>
-                <div class="spend_money spend_row_head">금 액</div>
-                <div class="spend_ex spend_row_head">구 분</div>
-                <div class="spend_con spend_row_head">항 목</div>
+                <div class="spend_date spend_row_head" id="spend_head_margin">
+                	날 짜
+                	<div class="spend_sort"></div>
+                </div>
+                <div class="spend_money spend_row_head">
+                	금 액
+                	<div class="spend_sort"></div>
+                </div>
+                <div class="spend_ex spend_row_head">
+	                구 분
+	                <div class="spend_sort"></div>
+                </div>
+                <div class="spend_con spend_row_head">
+                	항 목
+                	<div class="spend_sort"></div>
+                </div>
             </div>
             <div class="spend_rows" id="spendRows">
                 <!-- 여기에 데이터가 들어갈 자리 -->
@@ -28,18 +40,54 @@
             <button class="spend_btn" id="spend_delBtn">삭제</button>
         </div>
 <script>
+title_Btn_Event()
+function title_Btn_Event(){
+    
+}
         $(document).ready(function() {
+        	let sort = "none"
+        	let title = "none"
             loadData(0)
-
+			
+            let titles = document.querySelectorAll(".spend_main_title > div")
+            let sorts = document.querySelectorAll(".spend_main_title > div > div")
+            for(let i = 0 ; i<titles.length ;i++){
+                titles[i].addEventListener("click", function(){
+                    
+                    if(sorts[i].innerText == "▼"){
+                        sorts[i].style.display = "inline-block"
+                        sorts[i].innerText = "▲"
+                        console.log(i +" ASC")
+                        loadData(0, i, "ASC")
+                    } else{
+                        sorts[i].style.display = "inline-block"
+                        sorts[i].innerText = "▼"
+                        console.log(i +" DESC")
+                        loadData(0, i, "DESC")
+                    }
+                    
+                    for(let j = 0 ; j<sorts.length ;j++){
+                        if(i!=j){
+                            sorts[j].style.display = "none"
+                            sorts[j].innerText = "▲"
+                        }
+                    }
+                })
+            }
+            
             $(document).on('click', '.pagination a', function(e) {
                 e.preventDefault()
                 let page = $(this).text()
                 loadData(page - 1)
             })
 
-            function loadData(page) {
+            function loadData(page, s, t) {
+            	console.log(s)
+            	console.log(t)
+            	let sorts = ["sdate","money","extype","contype"]
                 $.ajax({
-                    url: `api/spending/list/${member.mid}?page=` + page,
+                    url: `api/spending/list/${member.mid}?page=` + page + 
+                    		"&sort=" + sorts[s] + "&title="+ t,
                     type: 'GET',
                     dataType: 'json',
                     success: function(data) {

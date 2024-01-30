@@ -31,9 +31,12 @@ public class SpendingService {
 	}
 	
 	public Page<Spending> midSpendings(Long mid, Pageable pageable){
-		System.out.println(mid);
 		return sr.findByMembershipMid(mid, pageable);
 	}
+	
+//	public Page<Spending> midSpendings(Long mid, Pageable pageable){
+//		return sr.findByMembershipMid(mid, pageable);
+//	}
 	
 //	
 //	public Membership login(String userid, String userpw) {

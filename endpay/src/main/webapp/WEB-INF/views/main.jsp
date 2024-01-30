@@ -20,12 +20,6 @@
 		margin: 0;
 	}
 </style>
-<%
-if(session.getAttribute("member") != null){
-/*  Membership id = (Membership)session.getAttribute("member");
- System.out.print("id: " + id.getUserid());  */
-}
-%>
 <body>
 	<header>
 		<div class="head">
