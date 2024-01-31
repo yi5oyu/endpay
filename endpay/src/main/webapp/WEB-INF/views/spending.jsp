@@ -85,7 +85,7 @@
               extype: $("input[name='extype']:checked").val(),
               contype: $("input[name='contype']:checked").val(),
               sdate: $("#input[name='sdate']").val(),
-              money: $(".money_input[name='money']").val(),
+              money: parseInt($(".money_input[name='money']").val().replace(/,/g, '')),
               detailtext: $(".detail_input[name='detailtext']").val(),
               memo: $(".memo[name='memo']").val()
         }
@@ -102,7 +102,7 @@
             dataType:"json",
             success: function (response) {
                 alert("성공")
-                window.location.href="endpay"
+//                 window.location.href="endpay"
                 console.log("Success:", response)
             },
             error: function (error) {

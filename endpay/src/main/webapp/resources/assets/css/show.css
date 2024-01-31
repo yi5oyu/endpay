@@ -84,23 +84,22 @@
     .select_data{
         width: 425px;
         height: 60px;
-        background-color: rgb(39, 39, 228);
         border-radius: 10px;
         margin-bottom: 10px;
     }
-    .select_line > div{
-        margin-top: 7px;
-        border-radius: 5px;
-        display: inline-block;
-        margin-left: 16px;
-        width: 120px;
-        height: 45px;
-        line-height: 45px;
-        text-align: center;
-        background-color: #cae6f4;
-        font-size: 17px;
-        cursor: pointer;
-    }
+/*     .select_line > div{ */
+/*         margin-top: 7px; */
+/*         border-radius: 5px; */
+/*         display: inline-block; */
+/*         margin-left: 16px; */
+/*         width: 120px; */
+/*         height: 45px; */
+/*         line-height: 45px; */
+/*         text-align: center; */
+/*         background-color: #cae6f4; */
+/*         font-size: 17px; */
+/*         cursor: pointer; */
+/*     } */
     .data_box{
         display: inline-block;
         width: 810px;
@@ -226,5 +225,61 @@
         width: 204px;
         padding-right: 5px;
         text-align: right;
+    }
+    .datepicker *{
+        font-size: 14px;
+    }
+    .datepicker--day-name{
+        /* color: #2d1dab; */
+        font-weight: 700;
+    }
+    .datepicker--cell{
+        height: 28px;
+    }
+    #date{
+        vertical-align: top;
+        display: inline-block;
+        margin: 15px 15px 15px 0;
+        width: 200px;
+        height: 250px;
+        border-radius: 5px;
+        background-color: #5cc4ef35;
+    }
+    .datepicker{
+/*         background: #5cc4ef35; */
+        width: 200px;
+        height: 250px;
+        border: none;
+    }
+    #date_input{
+    	display: inline-block;
+        font-size: 20px;
+        width: 280px;
+        height: 60px;
+        border: 0;
+        outline: none;
+        border-radius: 5px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    .select_line{
+        vertical-align: top;
+        display: inline-block;
+        width: 430px;
+        height: 60px;
+        border-radius: 5px;
+    }
+    .show_date_btn{
+        width: 130px;
+        height: 60px;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: 600;
+        vertical-align: top;
+        outline: none;
+        border: 0;
+        letter-spacing: 5px;
+        background-color: #5cc;
+        cursor: pointer;
     }
 </style>

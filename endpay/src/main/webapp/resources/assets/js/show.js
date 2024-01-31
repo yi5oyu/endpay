@@ -55,15 +55,33 @@
         data: chartData,
         options: chartOptions
     })
-
-    let line = document.querySelectorAll(".select_line > div")
-    line[0].style.backgroundColor = "#5cc4ef"
-    for(let i = 0 ;i<line.length ;i++){
-        line[i].addEventListener("click",function(){
-            line[i].style.backgroundColor = "#5cc4ef"
-            window.location.href = "/api/"+i
-            for(let j = 0 ;j<line.length ;j++)
-                if(i!=j)
-                    line[j].style.backgroundColor = "#cae6f4"
-        })
-    }
+    
+	$("#date_input").datepicker({
+	    position: 'right center',
+	    range: true,
+	    multipleDatesSeparator: ' ~ ',
+	    language: {
+	        daysMin: ['일', '월', '화', '수', '목', '금', '토'],
+	        months: [
+	            '1월', '2월', '3월', '4월', '5월', '6월',
+	            '7월', '8월', '9월', '10월', '11월', '12월'
+	        ],
+	        today: '오늘',
+	        clear: '지우기',
+	        dateFormat: 'yyyy-mm-dd',
+	        firstDay: 0
+	    },
+	    MaxDate: new Date(),
+	    dateFormat: 'yyyy-mm-dd', 
+	    onSelect: function (formattedDate, date, picker) {
+	        if (date) {
+	            // $('#selected-date').text('선택한 날짜: ' + formattedDate);		
+	            // var dayOfWeek = date.getDay();
+	            var days = ['일', '월', '화', '수', '목', '금', '토'];
+	            // $('#day-of-week').text('요일: ' + days[dayOfWeek]);
+	        } else {
+	            // $('#selected-date').text('');
+	            // $('#day-of-week').text('');
+	        }
+	    }
+	});

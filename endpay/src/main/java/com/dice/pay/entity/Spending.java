@@ -32,7 +32,7 @@ public class Spending {
     private String extype;
     private String contype;
     private String sdate;
-    private String money;
+    private int money;
     private String detailtext;
     private String memo;
 
@@ -79,11 +79,11 @@ public class Spending {
 		this.sdate = sdate;
 	}
 
-	public String getMoney() {
+	public int getMoney() {
 		return money;
 	}
 
-	public void setMoney(String money) {
+	public void setMoney(int money) {
 		this.money = money;
 	}
 

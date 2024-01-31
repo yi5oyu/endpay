@@ -10,16 +10,15 @@
             </div>
             <div id="chart_box">
                 <div class="contents_box">
-
+                
                 </div>
                 <div class="chart_box">
                     <div class="line_chart">
                         <div class="select_data">
                             <div class="select_dou"></div>
                             <div class="select_line">
-                                <div>주간</div>
-                                <div>월간</div>
-                                <div>연간</div>
+                                <input type="text" id="date_input">
+                                <button type="submit" class="show_date_btn">제출</button>
                             </div>
                         </div>
                         <canvas id="l_chart"></canvas>

@@ -52,6 +52,10 @@ public class SpendController {
 			@RequestParam(defaultValue = "sdate") String sort,
 			@RequestParam(defaultValue = "DESC") String title){
 		
+		if(sort.equals("undefined") && title.equals("undefined")) {
+			sort = "sdate";
+			title = "DESC";
+		}
 		System.out.println("gdgsd"+ sort);
 		System.out.println("gdgdd"+ title);
 		if(title.equals("DESC")) {

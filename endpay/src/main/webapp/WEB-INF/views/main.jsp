@@ -5,14 +5,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.1.0/css/datepicker.min.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.1.0/css/datepicker.min.css">
 <script src="https://cdn.jsdelivr.net/npm/air-datepicker@2.2.3/dist/js/datepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/assets/css/header.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/menu.css">
-<link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/show.css">
+<link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/mypage.css">
 <style>
 	*{
