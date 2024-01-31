@@ -146,10 +146,11 @@
         width: 120px;
         height: 32px;
         border-radius: 5px;
-        padding-left: 5px;
+        padding-right: 5px;
         font-size: 16px;
         line-height: 32px;
         vertical-align: top;
+        text-align: right;
     }
     .sum{
         border-radius: 5px;
