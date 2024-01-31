@@ -22,4 +22,12 @@ public interface SpendingRepository extends JpaRepository<Spending, Long> {
 	
 	@Query(value = "SELECT * FROM Spending s LEFT JOIN Membership m ON s.mid = m.mid WHERE m.mid = :mid AND TO_DATE(s.sdate, 'YYYY-MM-DD') BETWEEN TO_DATE(:startDate, 'YYYY-MM-DD') AND TO_DATE(:endDate, 'YYYY-MM-DD')", nativeQuery = true)
 	List<Spending> findListByMembershipMid(@Param("mid") Long mid, @Param("startDate") String startDate, @Param("endDate") String endDate);
+	
+    @Query(value = "SELECT s.contype, SUM(s.money) AS total_money " +
+		            "FROM Spending s " +
+		            "LEFT JOIN Membership m ON s.mid = m.mid " +
+		            "WHERE m.mid = :mid AND TO_DATE(s.sdate, 'YYYY-MM-DD') BETWEEN TO_DATE(:startDate, 'YYYY-MM-DD') AND TO_DATE(:endDate, 'YYYY-MM-DD') " +
+		            "GROUP BY s.contype", nativeQuery = true)
+    List<Object[]> findTotalMoneyByContype(@Param("mid") Long mid, @Param("startDate") String startDate, @Param("endDate") String endDate);
+
 }

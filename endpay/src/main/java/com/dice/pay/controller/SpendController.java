@@ -75,7 +75,7 @@ public class SpendController {
 	
 	
 	@GetMapping("/date/{mid}/{startDate}/{endDate}")
-	public List<Spending> dateSpendigs(
+	public List<Object[]> dateSpendigs(
 			@PathVariable Long mid,
 			@PathVariable String startDate,
 			@PathVariable String endDate

@@ -34,8 +34,8 @@ public class SpendingService {
 		return sr.findByMembershipMid(mid, pageable);
 	}
 	
-	public List<Spending> dateSpendings(Long mid, String startDate, String endDate){
-		return sr.findListByMembershipMid(mid, startDate, endDate);
+	public List<Object[]> dateSpendings(Long mid, String startDate, String endDate){
+		return sr.findTotalMoneyByContype(mid, startDate, endDate);
 	}
 	
 //	public Page<Spending> midSpendings(Long mid, Pageable pageable){

@@ -15,46 +15,6 @@
         sv_sum += parseFloat(sv_moneys[i].innerText.replace(/,/g, ''))
     document.querySelector(".sv_sum_money").innerText = sv_sum.toLocaleString('ko-KR')+" 원"
     document.querySelector(".sums_money").innerText = (re_sum+ir_sum+sv_sum).toLocaleString('ko-KR')+" 원"
-
-    let doughnutChartData = {
-        // 항목
-        labels: ['식비', '교육', '교통', '통신비'],
-        datasets: [{
-            data: [135500, 50500, 14300, 12020],
-        }]
-    }
-    let ctxDoughnut = document.getElementById('d_chart').getContext('2d');
-    let myDoughnutChart = new Chart(ctxDoughnut, {
-      type: 'doughnut',
-      data: doughnutChartData
-    })
-
-    // 그래프 차트
-    let chartData = {
-      labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-      datasets: [{
-        label: '연간',
-        // borderColor: 'rgb(75, 192, 192)',
-        data: [5365, 58499, 125280, 81, 56, 12513, 436346, 5365, 59, 64380, 111181, 12513],
-      }]
-    }
-
-    // 차트 옵션
-    let chartOptions = {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-
-    // 차트 생성
-    let ctx = document.getElementById('l_chart').getContext('2d');
-    let myChart = new Chart(ctx, {
-        type: 'line',
-        data: chartData,
-        options: chartOptions
-    })
     
 	$("#date_input").datepicker({
 	    position: 'right center',
