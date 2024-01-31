@@ -65,21 +65,7 @@ public class SpendController {
 			Pageable pageable = PageRequest.of(page, size, Sort.by(sort).ascending());
 			return ss.midSpendings(mid, pageable);
 		}
-		
-//		if(sort.equals("none")){
-//			Pageable pageable = new PageRequest(page, size);
-//			return ss.midSpendings(mid, pageable);
-//		} else {
-//			if(sort.equals("DESC")) {
-//				Pageable pageable = new PageRequest(page, size, Sort.Direction.DESC, title);
-//				return ss.midSpendings(mid, pageable);
-//			} else {
-//				Pageable pageable = new PageRequest(page, size, Sort.Direction.ASC, title);
-//				return ss.midSpendings(mid, pageable);
-//			}
-//		}
 	}
-	
 	
 	@DeleteMapping("/delete")
 	public void deleteSpending(
@@ -87,6 +73,19 @@ public class SpendController {
 		ss.deleteSpending(sids);
 	}
 	
+	
+	@GetMapping("/date/{mid}/{startDate}/{endDate}")
+	public List<Spending> dateSpendigs(
+			@PathVariable Long mid,
+			@PathVariable String startDate,
+			@PathVariable String endDate
+			) {
+		System.out.println(mid);
+		System.out.println(startDate);
+		System.out.println(endDate);
+		// 각각 mid: 61, startDate: 2023-01-01, endDate: 2023-12-30 값이 들어옴
+		return ss.dateSpendings(mid, startDate, endDate);	
+	}
 //	
 //	@GetMapping("/login")
 //	public ResponseEntity<Message> login(HttpSession session,
