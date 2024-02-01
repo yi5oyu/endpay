@@ -19,6 +19,17 @@
 		font-size: 0;
 		margin: 0;
 	}
+	.ad_container {
+        width: 200px; 
+        height: 660px; 
+/*         background-color: black;  */
+    }
+    .ad_left{
+        margin: 50px 50px 50px 0 ;
+    }
+    .ad_right{
+        margin: 50px 0 50px 80px;
+    }
 </style>
 <body>
 	<header>
@@ -48,6 +59,11 @@
         </div>
 	</header>
     <main>
+    <aside>
+        <div class="ad_container ad_left">
+    
+        </div>
+    </aside>
     <section class="menu">
     	<c:if test="${member != null}">
 	        <div class="h_menu menu_btn">홈</div>
@@ -58,17 +74,21 @@
         </c:if>
         <c:if test="${member == null}">
     		<div class="h_menu menu_btn">홈</div>
-    		<div class="menu_btn">마이 페이지</div>
     	</c:if>
     </section>
     <section class="contentss">
     
     </section>
+    <aside>
+        <div class="ad_container ad_right">
+
+        </div>
+    </aside>    
 </main>
 </body>
 <script>
 	const xhr = new XMLHttpRequest();
-	let arr = ["home","show","spending"  ,"mypage"]
+    let arr = ["home","show","spending","mypage"]
 	loadContents(0)
 	function loadContents(i) {
 	    $.ajax({

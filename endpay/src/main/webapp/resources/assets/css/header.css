@@ -12,6 +12,7 @@
 		width: 130px;
 		height: 80px;
 		filter: drop-shadow(0 0 0 white);
+		margin-left: 10px;
 	}
     .head_box{
         width: 1080px;

@@ -7,6 +7,10 @@
         <div class="main">
             <div class="my_chart">
                 <div class="chart_title">지출 내역서</div>
+                <div class="select_line">
+                     <input type="text" id="date_input">
+                     <button type="submit" class="show_date_btn">제출</button>
+                </div>
             </div>
             <div id="chart_box">
                 <div class="contents_box">
@@ -17,8 +21,8 @@
                         <div class="select_data">
                             <div class="select_dou"></div>
                             <div class="select_line">
-                                <input type="text" id="date_input">
-                                <button type="submit" class="show_date_btn">제출</button>
+                                <input type="text" class="year_input">
+                                <button type="submit" class="show_year_btn">제출</button>
                             </div>
                         </div>
                         <canvas id="l_chart"></canvas>
@@ -31,10 +35,8 @@
                     <div class="regular_spending">
                         <div class="re_title">고정 지출</div>
                         <div class="re_contents">
-                            <div class="contents_name">-</div>
-                            <div class="contents_money">1,100</div>
-                            <div class="contents_name">-</div>
-                            <div class="contents_money">5,120</div>
+<!--                             <div class="contents_name">-</div> -->
+<!--                             <div class="contents_money">1</div> -->
                         </div>
                         <div class="sum">
                             <div class="sum_title">합계 :</div>
@@ -44,8 +46,8 @@
                     <div class="irregular_spending">
                         <div class="ir_title">변동 지출</div>
                         <div class="ir_contents">
-                            <div class="contents_name">-</div>
-                            <div class="contents_money">1</div>
+<!--                             <div class="contents_name">-</div> -->
+<!--                             <div class="contents_money">1</div> -->
                         </div>
                         <div class="sum">
                             <div class="sum_title">합계 :</div>
@@ -55,14 +57,8 @@
                     <div class="saving_spending">
                         <div class="sv_title">저축</div>
                         <div class="sv_contents">
-                            <div class="sv_name contents_name">-</div>
-                            <div class="sv_money contents_money">1</div>
-                            <div class="sv_name contents_name">-</div>
-                            <div class="sv_money contents_money">1</div>
-                            <div class="sv_name contents_name">-</div>
-                            <div class="sv_money contents_money">1</div>
-                            <div class="sv_name contents_name">-</div>
-                            <div class="sv_money contents_money">1</div>
+<!--                             <div class="sv_name contents_name">-</div> -->
+<!--                             <div class="sv_money contents_money">1</div> -->
                         </div>
                         <div class="sv_sum sum">
                             <div class="sum_title">합계 :</div>
@@ -78,9 +74,17 @@
         </div>
     </section>
     <script>
-    let year = new Date()
-    year = "2023"
+    let currentDate = new Date()
+    
+    let year = currentDate.getFullYear()
     load_months(year)
+    $(".year_input").val(year)
+    
+	let month = String(currentDate.getMonth() + 1).padStart(2, '0')
+	let day = String(currentDate.getDate()).padStart(2, '0')
+    let dateInputValue = "2024-01-01 ~ "+year+"-"+month+"-"+day
+    $("#date_input").val(dateInputValue)
+    dou_chat(dateInputValue)
     function load_months(year){
          $.ajax({
              url: `api/spending/months/${member.mid}/` + year,
@@ -98,22 +102,26 @@
     
     $(document).ready(function() {
         $('.show_date_btn').click(function() {
-            let dateInputValue = $('#date_input').val()
-            let dateRange = dateInputValue.split(' ~ ')
-            $.ajax({
-                url: `api/spending/date/${member.mid}/` + dateRange[0] + '/' + dateRange[1],
-                type: 'GET',
-                success: function(data) {
-                    console.log(data)
-    				douggnut(data)
-    				data_box(data)
-                },
-                error: function(error) {
-                    console.error('Error fetching spending data:', error)
-                }
-            })
+        	dateInputValue = $('#date_input').val()
+            dou_chat(dateInputValue)
         })
     })
+   	function dou_chat(dateInputValue){
+    	let dateRange = dateInputValue.split(' ~ ')
+       $.ajax({
+           url: `api/spending/date/${member.mid}/` + dateRange[0] + '/' + dateRange[1],
+           type: 'GET',
+           success: function(data) {
+               console.log(data)
+			douggnut(data)
+			data_box(data)
+           },
+           error: function(error) {
+               console.error('Error fetching spending data:', error)
+           }
+       })        		
+}
+    
     function data_box(spend_data){
     	let regular = ["공과금", "관리비","통신비"]
     	let re_html = ""
@@ -178,7 +186,7 @@
         let chartData = {
                 labels: labels,
                 datasets: [{
-                  label: year+'연간',
+                  label: year+'년 월간 지출',
                   data: datas,
                 }]
         }

@@ -2,10 +2,12 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<main>
     <section class="contents">
         <div class="main">
             첫화면 endpay 소개 페이지
             가입하고 서비스를 이용하세요!
         </div>
     </section>
+</main>
 </html>

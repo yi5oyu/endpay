@@ -13,15 +13,6 @@
         font-size: 16px;
         height: 100px;
     }
-
-    main {
-        width: 1080px;
-        height: 760px;
-        margin: 0 auto;
-        /* padding: 10px; */
-        background-color: rgba(231, 228, 228, 0.536);
-        display: flex;
-    }
     .contents {
         width: 840px;
     }
