@@ -78,6 +78,24 @@
         </div>
     </section>
     <script>
+    let year = new Date()
+    year = "2023"
+    load_months(year)
+    function load_months(year){
+         $.ajax({
+             url: `api/spending/months/${member.mid}/` + year,
+             type: 'GET',
+             success: function(data) {
+                 console.log(data)
+                 line_chat(data, year)
+				//
+             },
+             error: function(error) {
+                 console.error('Error fetching spending data:', error)
+             }
+         })
+     }
+    
     $(document).ready(function() {
         $('.show_date_btn').click(function() {
             let dateInputValue = $('#date_input').val()
@@ -109,29 +127,28 @@
     	for(let i = 0 ;i<spend_data.length ;i++){
     		if (regular.indexOf(spend_data[i][0]) !== -1) {
     			re_html +='<div class="contents_name">'+ spend_data[i][0] + '</div>'
-    			re_html +='<div class="contents_money">'+ spend_data[i][1]+ '</div>'
+    			re_html +='<div class="contents_money">'+ spend_data[i][1].toLocaleString()+ '원</div>'
     			re_money += spend_data[i][1]
     		}
     		if (irregular.indexOf(spend_data[i][0]) !== -1) {
     			irre_html += '<div class="contents_name">'+ spend_data[i][0] +'</div>'
-    			irre_html += '<div class="contents_money">'+ spend_data[i][1] +'</div>'
+    			irre_html += '<div class="contents_money">'+ spend_data[i][1].toLocaleString() +'원</div>'
     			irre_money += spend_data[i][1]
     		}
     		if (saveing.indexOf(spend_data[i][0]) !== -1) {
     			save_html += '<div class="sv_name contents_name">'+ spend_data[i][0] +'</div>'
-    			save_html += '<div class="sv_money contents_money">'+ spend_data[i][1] +'</div>'
+    			save_html += '<div class="sv_money contents_money">'+ spend_data[i][1].toLocaleString() +'원</div>'
     			save_money += spend_data[i][1]
     		}
     	}
-		$(".re_sum_money").text(re_money)
-		$(".ir_sum_money").text(irre_money)
-		$(".sv_sum_money").text(save_money)
-		$(".sums_money").text((re_money+irre_money+save_money))
+		$(".re_sum_money").text(re_money.toLocaleString()+"원")
+		$(".ir_sum_money").text(irre_money.toLocaleString()+"원")
+		$(".sv_sum_money").text(save_money.toLocaleString()+"원")
+		$(".sums_money").text((re_money+irre_money+save_money).toLocaleString()+"원")
 		$(".re_contents").html(re_html)
 		$(".ir_contents").html(irre_html)
 		$(".sv_contents").html(save_html)
     }
-    
     function douggnut(spend_data){
     	let labels = []
     	let datas = []
@@ -150,33 +167,35 @@
           type: 'doughnut',
           data: doughnutChartData
         })
+    }
+    function line_chat(spend_data, year){
+    	let labels = []
+    	let datas = []
+    	for(let i = 0 ; i<spend_data.length ;i++){
+    		labels[i] = i+1 +"월"
+    		datas[i] = spend_data[i][1]
     	}
-        // 그래프 차트
         let chartData = {
-          labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-          datasets: [{
-            label: '연간',
-            // borderColor: 'rgb(75, 192, 192)',
-            data: [5365, 58499, 125280, 81, 56, 12513, 436346, 5365, 59, 64380, 111181, 12513],
-          }]
+                labels: labels,
+                datasets: [{
+                  label: year+'연간',
+                  data: datas,
+                }]
         }
-
-        // 차트 옵션
         let chartOptions = {
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-
-        // 차트 생성
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
         let ctx = document.getElementById('l_chart').getContext('2d');
         let myChart = new Chart(ctx, {
             type: 'line',
             data: chartData,
             options: chartOptions
         })
+    }
     </script>
     <script type="text/javascript" src="resources/assets/js/show.js"></script>
 </main>

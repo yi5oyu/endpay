@@ -38,6 +38,10 @@ public class SpendingService {
 		return sr.findTotalMoneyByContype(mid, startDate, endDate);
 	}
 	
+	public List<Object[]> monthsSpendings(Long mid, String year){
+		return sr.findTotalMoneyByMonth(mid, year);
+	}
+	
 //	public Page<Spending> midSpendings(Long mid, Pageable pageable){
 //		return sr.findByMembershipMid(mid, pageable);
 //	}

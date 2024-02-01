@@ -86,18 +86,17 @@ public class SpendController {
 		// 각각 mid: 61, startDate: 2023-01-01, endDate: 2023-12-30 값이 들어옴
 		return ss.dateSpendings(mid, startDate, endDate);	
 	}
-//	
-//	@GetMapping("/login")
-//	public ResponseEntity<Message> login(HttpSession session,
-//			@RequestParam String userid,
-//			@RequestParam String userpw){
-//			Membership member = ms.login(userid, userpw);
-//			if(member != null) {
-//				session.setAttribute("member", member);
-//				return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),ms.login(userid, userpw)),HttpStatus.OK);
-//			} else
-//				return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),ms.login(userid, userpw)),HttpStatus.UNAUTHORIZED);
-//	}
+	
+	@GetMapping("/months/{mid}/{year}")
+	public List<Object[]> monthsSpendings(
+			@PathVariable Long mid,
+			@PathVariable String year
+			){
+		return ss.monthsSpendings(mid, year);
+	}
+	
+	
+
 //
 //	@PutMapping("/update")
 //    public void updateMember(HttpSession session,

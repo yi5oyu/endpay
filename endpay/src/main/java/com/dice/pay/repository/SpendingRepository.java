@@ -30,4 +30,12 @@ public interface SpendingRepository extends JpaRepository<Spending, Long> {
 		            "GROUP BY s.contype", nativeQuery = true)
     List<Object[]> findTotalMoneyByContype(@Param("mid") Long mid, @Param("startDate") String startDate, @Param("endDate") String endDate);
 
+    @Query(value = "SELECT TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM') AS month, " +
+            "       SUM(money) AS total_money " +
+            "FROM Spending " +
+            "WHERE mid = :mid AND SUBSTR(sdate, 1, 4) = :year " +
+            "GROUP BY TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM') " +
+            "ORDER BY TO_DATE(TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM'), 'YYYY-MM')", nativeQuery = true)
+    List<Object[]> findTotalMoneyByMonth(@Param("mid") Long mid, @Param("year") String year);
+
 }
