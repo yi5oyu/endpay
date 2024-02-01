@@ -24,7 +24,9 @@
 	<header>
 		<div class="head">
             <div class="head_box">
-                <div class="header_box"></div>
+                <div class="header_box">
+                	<img class="logo"src="resources/assets/pic/CashFlow-logo.png">
+                </div>
                 <div class="info_box">
                     <c:if test="${member != null}">
                     	<div class="user_info">${member.userid}</div>
@@ -56,6 +58,7 @@
         </c:if>
         <c:if test="${member == null}">
     		<div class="h_menu menu_btn">홈</div>
+    		<div class="menu_btn">마이 페이지</div>
     	</c:if>
     </section>
     <section class="contentss">

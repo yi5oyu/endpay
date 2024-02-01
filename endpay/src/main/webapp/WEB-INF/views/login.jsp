@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="resources/assets/css/login.css">
     <div class="login">
         <div class="login_box">
-            <div class="login_title">End Pay</div>
+            <a class="login_title" href="cashflow"><img class="logo"src="resources/assets/pic/CashFlow-logo.png"></a>
              <div class="login_row">
                  <input class="login_input" type="text" name="userid" placeholder="아이디" />
              </div>
@@ -49,7 +49,7 @@
              dataType:'html',
              success: function (response) {
                  console.log("Success:", response)
-                 window.location.href="endpay"
+                 window.location.href="cashflow"
              },
              error: function (error) {
                  console.error("Error:", error)

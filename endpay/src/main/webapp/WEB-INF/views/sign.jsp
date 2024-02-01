@@ -8,7 +8,7 @@
     <section class="contents">
         <div class="sign">
             <div class="sign_box">
-                <a href="login" class="sign_title">End Pay</a>
+                <a href="login" class="sign_title"><img class="logo"src="resources/assets/pic/CashFlow-logo.png"></a>
                 <div class="sign_row">
                     <input class="sign_input" type="text" name="userid" value="test" />
                 </div>

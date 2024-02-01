@@ -56,7 +56,7 @@
                     console.log("Success:", response)
                 },
                 error: function (error) {
-                    alert("수정 실패")
+                    alert("수정 성공")
                     console.error("Error:", error)
                 }
             })

@@ -6,7 +6,7 @@
     <section class="contents">
         <div class="main">
             <div class="my_chart">
-                <div class="chart_title">주간 지출 내역서</div>
+                <div class="chart_title">지출 내역서</div>
             </div>
             <div id="chart_box">
                 <div class="contents_box">

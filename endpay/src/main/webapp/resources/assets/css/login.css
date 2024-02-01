@@ -4,10 +4,16 @@
         font-size: 0;
         margin: 0;
     }
+    .logo{
+		display: inline-block;
+		width: 210px;
+		height: 130px;
+		filter: drop-shadow(0 0 0 white);
+		margin: 40px 0 0 0;
+	}
     .head{
         font-size: 16px;
         height: 100px;
-        text-align: center;
     }
     .contents{
         width: 840px;
@@ -28,6 +34,7 @@
         border: 3px solid #5cc4ef;
     }
     .login_title{
+    	display: inline-block;
         width: 400px;
         height: 250px;
         color: black;
