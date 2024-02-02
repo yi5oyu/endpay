@@ -20,17 +20,6 @@
 		font-size: 0;
 		margin: 0;
 	}
-	.ad_container, aside {
-        width: 200px; 
-        height: 660px; 
-/*         background-color: black;  */
-    }
-    .ad_left{
-        margin: 50px 50px 50px 0 ;
-    }
-    .ad_right{
-        margin: 50px 0 50px 80px;
-    }
 </style>
 <body>
 	<header>

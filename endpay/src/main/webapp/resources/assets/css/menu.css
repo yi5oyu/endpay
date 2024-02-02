@@ -37,4 +37,18 @@
     .h_menu {
         margin: 10px;
     }
+    .ad_container{
+        width: 200px; 
+        height: 660px; 
+/*         background-color: black;  */
+    }
+    aside{
+    	width:250px;
+    }
+    .ad_left{
+        margin: 50px 50px 50px 0 ;
+    }
+    .ad_right{
+        margin: 50px 0 50px 80px;
+    }
 </style>
