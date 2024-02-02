@@ -234,7 +234,7 @@
         width: 200px;
         height: 250px;
         border-radius: 5px;
-        background-color: #5cc4ef35;
+/*         background-color: #5cc4ef35; */
     }
     .datepicker{
 /*         background: #5cc4ef35; */
@@ -289,12 +289,12 @@
         width: 100px;
         height: 40px;
         border-radius: 5px;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 600;
         vertical-align: top;
         outline: none;
         border: 0;
-        letter-spacing: 5px;
+/*         letter-spacing: 5px; */
         background-color: #5cc;
         cursor: pointer;
         margin: 9.5px 0 0 40px;

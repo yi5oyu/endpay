@@ -22,7 +22,7 @@
                             <div class="select_dou"></div>
                             <div class="select_line">
                                 <input type="text" class="year_input">
-                                <button type="submit" class="show_year_btn">제출</button>
+                                <button type="submit" class="show_year_btn">제 출</button>
                             </div>
                         </div>
                         <canvas id="l_chart"></canvas>
@@ -91,6 +91,7 @@
              type: 'GET',
              success: function(data) {
                  console.log(data)
+                 console.log("11")
                  line_chat(data, year)
 				//
              },
@@ -104,6 +105,9 @@
         $('.show_date_btn').click(function() {
         	dateInputValue = $('#date_input').val()
             dou_chat(dateInputValue)
+        })
+        $(".show_year_btn").click(function(){
+        	load_months($(".year_input").val())
         })
     })
    	function dou_chat(dateInputValue){
@@ -164,25 +168,35 @@
     		labels[i] = spend_data[i][0]
     		datas[i] = spend_data[i][1]
     	}
+    	let ctxDoughnut = document.getElementById('d_chart').getContext('2d');
+        if(window.myDoughnutChart){
+            window.myDoughnutChart.destroy()
+        }
         let doughnutChartData = {
             labels: labels,
             datasets: [{
                 data: datas,
             }]
         }
-        let ctxDoughnut = document.getElementById('d_chart').getContext('2d');
-        let myDoughnutChart = new Chart(ctxDoughnut, {
-          type: 'doughnut',
-          data: doughnutChartData
-        })
+        
+        window.myDoughnutChart = new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: doughnutChartData
+        });
     }
     function line_chat(spend_data, year){
+    	console.log("22")
     	let labels = []
     	let datas = []
     	for(let i = 0 ; i<spend_data.length ;i++){
     		labels[i] = i+1 +"월"
     		datas[i] = spend_data[i][1]
     	}
+        let ctx = document.getElementById('l_chart').getContext('2d');
+        
+        if(window.myLineChart){
+            window.myLineChart.destroy()
+        }
         let chartData = {
                 labels: labels,
                 datasets: [{
@@ -197,8 +211,8 @@
                   }
                 }
               }
-        let ctx = document.getElementById('l_chart').getContext('2d');
-        let myChart = new Chart(ctx, {
+
+        window.myLineChart = new Chart(ctx, {
             type: 'line',
             data: chartData,
             options: chartOptions
