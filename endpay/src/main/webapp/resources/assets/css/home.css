@@ -1,0 +1,166 @@
+@charset "UTF-8";
+<style>
+.home_content{
+    display: inline-block;
+    background-color: #5cc4ef80;
+    width: 820px;
+    border-radius: 5px;
+}
+.home_title{
+    margin: 10px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+.home_explain{
+    margin: 0 10px;
+    height: 540px;
+}
+.h_explain_head{
+    height: 50px;
+    line-height: 50px;
+    font-size: 19px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+.h_explain_title{
+    padding-left: 5px;
+    height: 60px;
+}
+.h_title_name{
+    display: inline-block;
+    background-color: #5cc4ef;
+    width: 100px;
+    height: 50px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+.h_explain_content{
+    height: 425px;
+    width: 810px;
+}
+.home_type{
+    background-color: white;
+    height: 60px;
+}
+.h_type_name{
+    display: inline-block;
+    background-color: #5cc4ef;
+    width: 120px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+.h_api_name{
+    display: inline-block;
+    background-color: #5cc4ef;
+    width: 130px;
+    height: 50px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+.h_myinfo_img{
+    display: inline-block;
+    margin: 40px 55px;
+    width: 365px;
+    height: 365px;
+}
+.h_myspend_img{
+    display: inline-block;
+    margin: 40px 0;
+    width: 280px;
+    height: 365px;
+}
+.h_show_img{
+    display: inline-block;
+    margin: 25px;
+    width: 370px;
+    height: 370px;
+}
+.h_write_img{
+    display: inline-block;
+    margin: 25px 0;
+    width: 370px;
+    height: 370px;
+}
+.api_box{
+    display: inline-block;
+    width: 795px;
+    height: 415px;
+    vertical-align: top;
+    margin: 10px 0 0 10px;
+}
+.api_docu{
+    width: 785px;
+    display: inline-block;
+    height: 40px;
+    border-radius: 5px;
+    line-height: 40px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+.api_post{
+    background-color: #e7f6ec;
+}
+.api_post_icon{
+    background-color: #10a54a;
+}
+.api_get{
+    background-color: #e7f0f7;
+}
+.api_get_icon{
+    background-color: #0f6ab4;
+}
+.api_put{
+    background-color: #f9f2e9;
+}
+.api_put_icon{
+    background-color: #c5862b;
+}
+.api_del{
+    background-color: #f5e8e8;
+}
+.api_del_icon{
+    background-color: #a41e22;
+}
+.api_icon{
+    display: inline-block;
+    border-radius: 5px;
+    height: 40px;
+    width: 80px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+}
+.api_text{
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+    width: auto;
+}
+.api_method{
+    float: right;
+    display: inline-block;
+    color: #10a54a;
+    font-size: 16px;
+}
+</style>

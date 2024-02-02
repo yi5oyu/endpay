@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="resources/assets/css/show.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/mypage.css">
+<link rel="stylesheet" type="text/css" href="resources/assets/css/home.css">
 <style>
 	*{
 		font-size: 0;
