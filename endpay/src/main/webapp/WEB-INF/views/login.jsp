@@ -14,7 +14,7 @@
                  <input class="login_input" type="text" name="userpw" placeholder="비밀번호" />
              </div>
              <div class="login_row login_a">
-             	 <a href="endpay">홈</a>
+             	 <a href="cashflow">홈</a>
                  <a href="newsign">회원가입</a>
              </div>
              <div class="login_row">
