@@ -13,20 +13,50 @@
             </div>
 
             <div class="home_explain home_content">
-                <div class="h_explain_head">API 문서</div>
-                <div class="h_explain_title">
-                    <div class="h_title_name h_api_name">Member</div>
-                    <div class="h_title_name h_api_name">Spending</div>
-                    <div class="h_explain_content">
-                        <div class="api_box">
-                            
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 <script>
+const xhr = new XMLHttpRequest();
+let arr = ["homeapi","homecontent"]
+loadContents(0)
+function loadContents(i) {
+    $.ajax({
+        type: 'GET',
+        url: `\${arr[i]}`,
+        success: function(response) {
+        	$('.contentss').html($(response).filter('main').html());
+        	if(arr[i]=="mypage"){
+        		const xhr = new XMLHttpRequest();
+        		let arr = ["myinfo","rewriteinfo","myspending"]
+        		loadMyContents(0)
+        		function loadMyContents(j) {
+        		    $.ajax({
+        		        type: 'GET',
+        		        url: `\${arr[j]}`,
+        		        success: function(response) {
+        		            $('.my_info').html($(response).filter('main').html());
+        		        },
+        		        error: function() {
+        		            console.error('Failed to load content.');
+        		        }
+        		    });
+        		}
+        		let a = document.querySelectorAll(".mypage")
+        		for(let j = 0 ;j<a.length ;j++){
+        		    a[j].addEventListener("click",function(){
+        		    	loadMyContents(j)
+        		    })
+        		}
+        	}
+        },
+        error: function() {
+            console.error('Failed to load content.');
+        }
+    });
+}
+
     let titles = document.querySelectorAll(".h_title_name")
     let types = document.querySelectorAll(".h_type_name")
     home_btn_event(titles)

@@ -49,6 +49,14 @@ public class ViewController {
     public String viewMySpending(){
     	return "myspending";
     }
+    @RequestMapping("homeapi")
+    public String homeapi(){
+    	return "homeapi";
+    }
+    @RequestMapping("homecontent")
+    public String homecontent(){
+    	return "homecontent";
+    }
     @RequestMapping("logout")
     public String logout(HttpSession session) {
     	session.removeAttribute("member");
