@@ -20,7 +20,7 @@
 		font-size: 0;
 		margin: 0;
 	}
-	.ad_container {
+	.ad_container, aside {
         width: 200px; 
         height: 660px; 
 /*         background-color: black;  */
@@ -62,7 +62,18 @@
     <main>
     <aside>
         <div class="ad_container ad_left">
-    
+	    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5276760683352601"
+			     crossorigin="anonymous"></script>
+			<!-- 11111 -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-5276760683352601"
+			     data-ad-slot="6035752663"
+			     data-ad-format="auto"
+			     data-full-width-responsive="true"></ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
         </div>
     </aside>
     <section class="menu">
@@ -82,7 +93,18 @@
     </section>
     <aside>
         <div class="ad_container ad_right">
-
+	    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5276760683352601"
+			     crossorigin="anonymous"></script>
+			<!-- 11111 -->
+			<ins class="adsbygoogle"
+			     style="display:block"
+			     data-ad-client="ca-pub-5276760683352601"
+			     data-ad-slot="6035752663"
+			     data-ad-format="auto"
+			     data-full-width-responsive="true"></ins>
+			<script>
+			     (adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
         </div>
     </aside>    
 </main>
