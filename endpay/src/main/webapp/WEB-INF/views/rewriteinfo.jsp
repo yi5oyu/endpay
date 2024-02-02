@@ -32,7 +32,6 @@
     </div>
     <script>
     	function rewrite(){
-    		// ajax로 controller에 info_input value들 전달
     		let userData = {
  			mid: $(".mid").text(),
             userid: $("input[name='userid']").val(),
@@ -43,7 +42,7 @@
         	}
             $.ajax({
                 type: "PUT",
-                url: "api/members/update",
+                url: "api/members",
                 async : true,
                 data: JSON.stringify(userData),
                 headers: {
@@ -67,12 +66,13 @@
     		let mid = $(".mid").text()
             $.ajax({
                 type: "DELETE",
-                url: "api/members/delete/"+mid,
+                url: "api/members/"+mid,
                 async : true,
                 success: function (response) {
                     // 성공 시 처리
                     alert("삭제 성공")
                     console.log("Success:", response)
+                    window.location.href="login"
                 },
                 error: function (error) {
                     // 실패 시 처리

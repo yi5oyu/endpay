@@ -28,19 +28,25 @@ public class MemberController {
 	@Autowired
 	MembershipService ms;
 	
-	@PostMapping("/newsign")
-	public Membership memberSave(
+	@PostMapping
+	public Membership saveMember(
 			@RequestBody Membership member) {
 		return ms.saveMember(member);
 	}
 	
-	@GetMapping("/all")
-	public List<Membership> getAllMembers(){
+	@GetMapping
+	public List<Membership> findMembers(){
 		return ms.allMembers();
 	}
 	
+	@GetMapping("/{mid}")
+	public Membership findMember(
+			@PathVariable Long mid) {
+		return ms.findMember(mid);
+	}
+	
 	@GetMapping("/login")
-	public ResponseEntity<Message> login(HttpSession session,
+	public ResponseEntity<Message> findMember(HttpSession session,
 			@RequestParam String userid,
 			@RequestParam String userpw){
 			Membership member = ms.login(userid, userpw);
@@ -51,14 +57,14 @@ public class MemberController {
 				return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),ms.login(userid, userpw)),HttpStatus.UNAUTHORIZED);
 	}
 
-	@PutMapping("/update")
+	@PutMapping
     public void updateMember(HttpSession session,
             @RequestBody Membership member) {
 		ms.updateMember(member);
 		session.setAttribute("member", ms.findMember(member.getMid()));
     }
 	
-	@DeleteMapping("/delete/{mid}")
+	@DeleteMapping("/{mid}")
 	public void deleteMember(
 			@PathVariable Long mid) {
 		ms.deleteMember(mid);

@@ -75,7 +75,7 @@
      
          $.ajax({
              type: "POST",
-             url: "api/members/newsign",
+             url: "api/members",
              async : true,
              data: JSON.stringify(userData),
              headers: {
