@@ -5,11 +5,40 @@
 <main>
    <div class="h_explain_head">API 문서</div>
    <div class="h_explain_title">
-       <div class="h_title_name h_api_name">Member</div>
+       <div class="h_title_name h_api_name" style="background-color: #5cc;">Member</div>
        <div class="h_title_name h_api_name">Spending</div>
        <div class="h_explain_content">
            <div class="api_box">
-               
+		        <div class="api_docu api_post">
+			        <div class="api_icon api_post_icon">POST</div>
+			        <div class="api_text">/api/members</div>
+			        <div class="api_method">saveMember</div>
+			    </div>
+			    <div class="api_docu api_get">
+			        <div class="api_icon api_get_icon">GET</div>
+			        <div class="api_text">/api/members</div>
+			        <div class="api_method">findMembers</div>
+			    </div>
+			    <div class="api_docu api_get">
+			        <div class="api_icon api_get_icon">GET</div>
+			        <div class="api_text">/api/members/{mid}</div>
+			        <div class="api_method">findMember</div>
+			    </div>
+			    <div class="api_docu api_get">
+			        <div class="api_icon api_get_icon">GET</div>
+			        <div class="api_text">/api/members/login?userid={userid}&userpw={userpw}</div>
+			        <div class="api_method">checkMember</div>
+			    </div>
+			    <div class="api_docu api_put">
+			        <div class="api_icon api_put_icon">PUT</div>
+			        <div class="api_text">/api/members</div>
+			        <div class="api_method">updateMember</div>
+			    </div>
+			    <div class="api_docu api_del">
+			        <div class="api_icon api_del_icon">DELETE</div>
+			        <div class="api_text">/api/members/{mid}</div>
+			        <div class="api_method">deleteMember</div>
+			    </div>
            </div>
        </div>
    </div>
@@ -33,7 +62,7 @@
 		if(i==1){
 	        html += create_html("POST", "/api/spending", "saveSpending")
 	        html += create_html("GET", "/api/spending", "findSpendings")
-	        html += create_html("GET", "/api/spending/{sid}", "findSpending")
+	        html += create_html("GET", "/api/spending/one/{sid}", "findSpending")
 	        html += create_html("GET", "/api/spending/{mid}", "findMidSpendings")
 	        html += create_html("GET", "/api/spending/{mid}/{startDate}/{endDate}", "dateSpendings")
 	        html += create_html("GET", "/api/spending/{mid}/{year}", "monthsSpendings")

@@ -67,7 +67,7 @@
     </aside>
     <section class="menu">
     	<c:if test="${member != null}">
-	        <div class="h_menu menu_btn">홈</div>
+	        <div class="h_menu menu_btn" style="background-color: #5cc4ef;">홈</div>
 	        <div class="menu_btn">소비 내역서</div>
 	        <div class="menu_btn">지출 작성</div>
 	        

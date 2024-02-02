@@ -16,12 +16,19 @@
     <context:component-scan base-package="com.dice.pay"/>
 
     <!-- Apache Commons DBCP 데이터 소스 설정 -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
-        <property name="username" value="system"/>
-        <property name="password" value="dyd500253!"/>
-    </bean>
+<!--     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!--         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> -->
+<!--         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> -->
+<!--         <property name="username" value="system"/> -->
+<!--         <property name="password" value="dyd500253!"/> -->
+<!--     </bean> -->
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+	    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://paycashflow.cvu8guyc0zxn.ap-northeast-2.rds.amazonaws.com:3306/cashflow?useSSL=false"/>
+	    <property name="username" value="yi5oyu"/>
+	    <property name="password" value="dyd500253!"/>
+	</bean>
 
     <!-- JPA EntityManagerFactory 설정 -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -29,18 +36,20 @@
         <property name="packagesToScan" value="com.dice.pay.entity"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-                <property name="databasePlatform" value="org.hibernate.dialect.OracleDialect"/>
+<!--                 <property name="databasePlatform" value="org.hibernate.dialect.OracleDialect"/> -->
+		            <property name="databasePlatform" value="org.hibernate.dialect.MySQL8Dialect"/>
             </bean>
         </property>
         <property name="jpaProperties">
             <props>
                 <!-- Hibernate 및 JPA 속성들 -->
-                <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+<!--                 <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <prop key="hibernate.use_sql_comments">true</prop>
                 <prop key="hibernate.id.new_generator_mappings">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">none</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>

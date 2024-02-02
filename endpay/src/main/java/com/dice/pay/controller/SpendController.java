@@ -42,7 +42,7 @@ public class SpendController {
 		return ss.allSpendings();
 	}
 	
-	@GetMapping("/{sid}")
+	@GetMapping("/one/{sid}")
 	public Spending findSpending(
 			@PathVariable Long sid) {
 		return ss.findExpenses(sid);
