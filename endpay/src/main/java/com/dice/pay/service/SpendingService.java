@@ -31,7 +31,7 @@ public class SpendingService {
 	}
 	
 	public Page<Spending> midSpendings(Long mid, Pageable pageable){
-		return sr.findByMembershipMid(mid, pageable);
+		return sr.findByMembership_Mid(mid, pageable);
 	}
 	
 	public List<Object[]> dateSpendings(Long mid, String startDate, String endDate){

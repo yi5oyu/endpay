@@ -17,25 +17,23 @@ public interface SpendingRepository extends JpaRepository<Spending, Long> {
 //	           countQuery = "SELECT COUNT(s) FROM Spending s JOIN s.membership m WHERE m.mid = :mid")
 //	 Page<Spending> findByMembershipMid(@Param("mid") Long mid, Pageable pageable);
 	
-	@Query(value = "SELECT * FROM Spending s LEFT JOIN Membership m ON s.mid = m.mid WHERE m.mid = :mid", nativeQuery = true)
-    Page<Spending> findByMembershipMid(@Param("mid") Long mid, Pageable pageable);
+	Page<Spending> findByMembership_Mid(Long mid, Pageable pageable);
 	
-	@Query(value = "SELECT * FROM Spending s LEFT JOIN Membership m ON s.mid = m.mid WHERE m.mid = :mid AND TO_DATE(s.sdate, 'YYYY-MM-DD') BETWEEN TO_DATE(:startDate, 'YYYY-MM-DD') AND TO_DATE(:endDate, 'YYYY-MM-DD')", nativeQuery = true)
-	List<Spending> findListByMembershipMid(@Param("mid") Long mid, @Param("startDate") String startDate, @Param("endDate") String endDate);
+	List<Spending> findByMembershipMidAndSdateBetween(Long mid, String startDate, String endDate);
 	
     @Query(value = "SELECT s.contype, SUM(s.money) AS total_money " +
-		            "FROM Spending s " +
-		            "LEFT JOIN Membership m ON s.mid = m.mid " +
-		            "WHERE m.mid = :mid AND TO_DATE(s.sdate, 'YYYY-MM-DD') BETWEEN TO_DATE(:startDate, 'YYYY-MM-DD') AND TO_DATE(:endDate, 'YYYY-MM-DD') " +
-		            "GROUP BY s.contype", nativeQuery = true)
+            "FROM Spending s " +
+            "LEFT JOIN Membership m ON s.mid = m.mid " +
+            "WHERE m.mid = :mid AND STR_TO_DATE(s.sdate, '%Y-%m-%d') BETWEEN STR_TO_DATE(:startDate, '%Y-%m-%d') AND STR_TO_DATE(:endDate, '%Y-%m-%d') " +
+            "GROUP BY s.contype", nativeQuery = true)
     List<Object[]> findTotalMoneyByContype(@Param("mid") Long mid, @Param("startDate") String startDate, @Param("endDate") String endDate);
 
-    @Query(value = "SELECT TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM') AS month, " +
-            "       SUM(money) AS total_money " +
-            "FROM Spending " +
-            "WHERE mid = :mid AND SUBSTR(sdate, 1, 4) = :year " +
-            "GROUP BY TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM') " +
-            "ORDER BY TO_DATE(TO_CHAR(TO_DATE(sdate, 'YYYY-MM-DD'), 'YYYY-MM'), 'YYYY-MM')", nativeQuery = true)
+    @Query(value = "SELECT DATE_FORMAT(STR_TO_DATE(s.sdate, '%Y-%m-%d'), '%Y-%m') AS month, " +
+            "       SUM(s.money) AS total_money " +
+            "FROM Spending s " +
+            "WHERE s.mid = :mid AND SUBSTRING(s.sdate, 1, 4) = :year " +
+            "GROUP BY DATE_FORMAT(STR_TO_DATE(s.sdate, '%Y-%m-%d'), '%Y-%m') " +
+            "ORDER BY STR_TO_DATE(DATE_FORMAT(STR_TO_DATE(s.sdate, '%Y-%m-%d'), '%Y-%m'), '%Y-%m')", nativeQuery = true)
     List<Object[]> findTotalMoneyByMonth(@Param("mid") Long mid, @Param("year") String year);
 
 }
