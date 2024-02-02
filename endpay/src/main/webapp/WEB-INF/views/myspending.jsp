@@ -86,7 +86,7 @@ function title_Btn_Event(){
             	console.log(t)
             	let sorts = ["sdate","money","extype","contype"]
                 $.ajax({
-                    url: `api/spending/list/${member.mid}?page=` + page + 
+                    url: `api/spending/${member.mid}?page=` + page + 
                     		"&sort=" + sorts[s] + "&title="+ t,
                     type: 'GET',
                     dataType: 'json',
@@ -135,7 +135,7 @@ function spend_Del_Event(){
         if (selectedSids.length > 0) {
             $.ajax({
                 type: "DELETE",
-                url: "api/spending/delete",
+                url: "api/spending",
                 data: JSON.stringify(selectedSids),
                 contentType: "application/json",
                 success: function() {

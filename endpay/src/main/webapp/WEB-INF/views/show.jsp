@@ -87,7 +87,7 @@
     dou_chat(dateInputValue)
     function load_months(year){
          $.ajax({
-             url: `api/spending/months/${member.mid}/` + year,
+             url: `api/spending/${member.mid}/` + year,
              type: 'GET',
              success: function(data) {
                  console.log(data)
@@ -113,7 +113,7 @@
    	function dou_chat(dateInputValue){
     	let dateRange = dateInputValue.split(' ~ ')
        $.ajax({
-           url: `api/spending/date/${member.mid}/` + dateRange[0] + '/' + dateRange[1],
+           url: `api/spending/${member.mid}/` + dateRange[0] + '/' + dateRange[1],
            type: 'GET',
            success: function(data) {
                console.log(data)

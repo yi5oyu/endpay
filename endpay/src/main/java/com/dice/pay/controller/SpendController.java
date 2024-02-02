@@ -29,23 +29,21 @@ public class SpendController {
 	@Autowired
 	SpendingService ss;
 	
-	@PostMapping("/expenses")
-	public Spending saveExpenses(HttpSession session,
+	@PostMapping
+	public Spending saveSpending(HttpSession session,
 			@RequestBody Spending spending) {
 		 Membership membership = (Membership)session.getAttribute("member");
-//		 System.out.println(membership.getMid());
 		 spending.setMembership(membership);
-//		 System.out.println(spending.toString());
 		return ss.saveExpenses(spending);
 	}
 	
-	@GetMapping("/all")
-	public List<Spending> getAllSpendings(){
+	@GetMapping
+	public List<Spending> findSpendings(){
 		return ss.allSpendings();
 	}
 	
-	@GetMapping("/list/{mid}")
-	public Page<Spending> getSpendingList(
+	@GetMapping("/{mid}")
+	public Page<Spending> findMidSpending(
 			@PathVariable Long mid,
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "10") int size,
@@ -56,8 +54,6 @@ public class SpendController {
 			sort = "sdate";
 			title = "DESC";
 		}
-		System.out.println("gdgsd"+ sort);
-		System.out.println("gdgdd"+ title);
 		if(title.equals("DESC")) {
 			Pageable pageable = PageRequest.of(page, size, Sort.by(sort).descending());
 			return ss.midSpendings(mid, pageable);
@@ -67,14 +63,14 @@ public class SpendController {
 		}
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping
 	public void deleteSpending(
 			@RequestBody List<Long> sids) {
 		ss.deleteSpending(sids);
 	}
 	
 	
-	@GetMapping("/date/{mid}/{startDate}/{endDate}")
+	@GetMapping("{mid}/{startDate}/{endDate}")
 	public List<Object[]> dateSpendigs(
 			@PathVariable Long mid,
 			@PathVariable String startDate,
@@ -87,8 +83,8 @@ public class SpendController {
 		return ss.dateSpendings(mid, startDate, endDate);	
 	}
 	
-	@GetMapping("/months/{mid}/{year}")
-	public List<Object[]> monthsSpendings(
+	@GetMapping("{mid}/{year}")
+	public List<Object[]> monthSpendings(
 			@PathVariable Long mid,
 			@PathVariable String year
 			){

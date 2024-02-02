@@ -92,7 +92,7 @@
     
         $.ajax({
             type: "POST",
-            url: "api/spending/expenses",
+            url: "api/spending",
             async : true,
             data: JSON.stringify(userData),
             headers: {
@@ -102,7 +102,7 @@
             dataType:"json",
             success: function (response) {
                 alert("성공")
-//                 window.location.href="endpay"
+//                 window.location.href="cashflow"
                 console.log("Success:", response)
             },
             error: function (error) {
