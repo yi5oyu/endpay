@@ -42,8 +42,14 @@ public class SpendController {
 		return ss.allSpendings();
 	}
 	
+	@GetMapping("/{sid}")
+	public Spending findSpending(
+			@PathVariable Long sid) {
+		return ss.findExpenses(sid);
+	}
+	
 	@GetMapping("/{mid}")
-	public Page<Spending> findMidSpending(
+	public Page<Spending> findMidSpendings(
 			@PathVariable Long mid,
 			@RequestParam(defaultValue = "0") int page,
 			@RequestParam(defaultValue = "10") int size,

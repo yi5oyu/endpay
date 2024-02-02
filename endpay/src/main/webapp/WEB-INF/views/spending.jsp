@@ -33,6 +33,10 @@
                     <span>교통</span>
                     <input class="radio_contype irregular" type="radio" name="contype" value="의료">
                     <span>의료</span>
+                    <input class="radio_contype irregular" type="radio" name="contype" value="의류">
+                    <span>의류</span>
+                    <input class="radio_contype irregular" type="radio" name="contype" value="전자제품">
+                    <span>전자제품</span>
                     <input class="radio_contype saving" type="radio" name="contype" value="예금">
                     <span>예금</span>
                     <input class="radio_contype saving" type="radio" name="contype" value="적금">

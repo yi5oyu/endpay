@@ -46,7 +46,7 @@ public class MemberController {
 	}
 	
 	@GetMapping("/login")
-	public ResponseEntity<Message> findMember(HttpSession session,
+	public ResponseEntity<Message> checkMember(HttpSession session,
 			@RequestParam String userid,
 			@RequestParam String userpw){
 			Membership member = ms.login(userid, userpw);
