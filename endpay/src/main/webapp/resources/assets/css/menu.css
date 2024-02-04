@@ -51,4 +51,8 @@
     .ad_right{
         margin: 50px 0 50px 80px;
     }
+    .ad_img{
+    	width:200px;
+    	height:660px;
+    }
 </style>

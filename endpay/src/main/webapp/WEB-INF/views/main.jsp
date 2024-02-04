@@ -51,18 +51,7 @@
     <main>
     <aside>
         <div class="ad_container ad_left">
-	    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5276760683352601"
-			     crossorigin="anonymous"></script>
-			<!-- 11111 -->
-			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-5276760683352601"
-			     data-ad-slot="6035752663"
-			     data-ad-format="auto"
-			     data-full-width-responsive="true"></ins>
-			<script>
-			     (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+			<img class="ad_img"src="resources/assets/pic/ad_img0.png">
         </div>
     </aside>
     <section class="menu">
@@ -82,18 +71,7 @@
     </section>
     <aside>
         <div class="ad_container ad_right">
-	    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5276760683352601"
-			     crossorigin="anonymous"></script>
-			<!-- 11111 -->
-			<ins class="adsbygoogle"
-			     style="display:block"
-			     data-ad-client="ca-pub-5276760683352601"
-			     data-ad-slot="6035752663"
-			     data-ad-format="auto"
-			     data-full-width-responsive="true"></ins>
-			<script>
-			     (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+			<img class="ad_img"src="resources/assets/pic/ad_img1.png">
         </div>
     </aside>    
 </main>
