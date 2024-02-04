@@ -77,6 +77,12 @@
 </main>
 </body>
 <script>
+	$(".ad_img").click(function(){
+		window.location.hred = "github.com/yi5oyu"
+	})
+		
+	}
+	
 	const xhr = new XMLHttpRequest();
     let arr = ["home","show","spending","mypage"]
 	loadContents(0)
