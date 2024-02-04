@@ -20,7 +20,7 @@
             <div class="home_type">
                 <div class="h_type_name" style="background-color: #5cc;" >주요기능</div>
                 <div class="h_type_name">REST API</div>
-                <div class="h_type_name">개선 사항</div>
+                <div class="h_type_name">CHANGLOG</div>
 <!--                 <div class="h_type_name">피드백 하기</div> -->
                 
             </div>

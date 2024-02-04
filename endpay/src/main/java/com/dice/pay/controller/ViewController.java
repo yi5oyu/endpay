@@ -57,6 +57,22 @@ public class ViewController {
     public String homecontent(){
     	return "homecontent";
     }
+    @RequestMapping("homefix")
+    public String homefix(){
+    	return "homefix";
+    }
+    @RequestMapping("ch_history")
+    public String ch_history(){
+    	return "ch_history";
+    }
+    @RequestMapping("ch_feature")
+    public String ch_feature(){
+    	return "ch_feature";
+    }
+    @RequestMapping("ch_bug")
+    public String ch_bug(){
+    	return "ch_bug";
+    }
     @RequestMapping("logout")
     public String logout(HttpSession session) {
     	session.removeAttribute("member");

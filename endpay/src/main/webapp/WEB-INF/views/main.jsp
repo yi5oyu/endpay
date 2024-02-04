@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="resources/assets/css/spending.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/mypage.css">
 <link rel="stylesheet" type="text/css" href="resources/assets/css/home.css">
+<link rel="stylesheet" type="text/css" href="resources/assets/css/homefix.css">
 <style>
 	*{
 		font-size: 0;
@@ -51,7 +52,7 @@
     <main>
     <aside>
         <div class="ad_container ad_left">
-			<img class="ad_img"src="resources/assets/pic/ad_img0.png">
+			<img class="ad_img go_git"src="resources/assets/pic/ad_img0.png">
         </div>
     </aside>
     <section class="menu">
@@ -77,11 +78,9 @@
 </main>
 </body>
 <script>
-	$(".ad_img").click(function(){
-		window.location.hred = "github.com/yi5oyu"
+	$(".go_git").click(function(){
+		window.location.href = "github.com/yi5oyu"
 	})
-		
-	}
 	
 	const xhr = new XMLHttpRequest();
     let arr = ["home","show","spending","mypage"]

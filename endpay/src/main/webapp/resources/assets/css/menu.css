@@ -54,5 +54,6 @@
     .ad_img{
     	width:200px;
     	height:660px;
+    	cursor: pointer;
     }
 </style>
