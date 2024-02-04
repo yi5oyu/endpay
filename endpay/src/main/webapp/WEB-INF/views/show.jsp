@@ -130,7 +130,7 @@
     	let regular = ["공과금", "관리비","통신비"]
     	let re_html = ""
     	let re_money = 0
-    	let irregular = ["식비","교육","교통","의료"]
+    	let irregular = ["식비","교육","교통","의료","의류","전자제품"]
     	let irre_html = ""
     	let irre_money = 0
     	let saveing = ["예금","적금","기타"]
