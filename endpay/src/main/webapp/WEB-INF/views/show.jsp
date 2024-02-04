@@ -14,7 +14,7 @@
             </div>
             <div id="chart_box">
                 <div class="contents_box">
-                
+                	
                 </div>
                 <div class="chart_box">
                     <div class="line_chart">

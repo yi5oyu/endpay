@@ -79,7 +79,7 @@
 </body>
 <script>
 	$(".go_git").click(function(){
-		window.location.href = "github.com/yi5oyu"
+		window.location.href = "https://github.com/yi5oyu"
 	})
 	
 	const xhr = new XMLHttpRequest();

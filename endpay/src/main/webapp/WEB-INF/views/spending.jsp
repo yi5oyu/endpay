@@ -7,7 +7,7 @@
         <div class="info_spending">
                 회원 아이디/구분/항목/상세/날짜/금액/메모
                 <div class="my_info_spending">
-                    <div class="ad"></div>
+                    <div class="ad">지출 입력하세요</div>
                     <button class="btn" onclick="spendingAjaxRequest()">제출</button>
                 </div>
                 <div id="expenseType">
