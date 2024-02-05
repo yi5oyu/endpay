@@ -53,6 +53,7 @@
         }
     }
     function selected_contents(a){
+    		reset_types()
             let contents = document.querySelectorAll(".radio_contype")
             let contspan = document.querySelectorAll(".radio_contype + span")
             if(a==0){
@@ -110,3 +111,11 @@
             document.querySelector(".d_money").innerText = e.target.value
         }
     })
+    function reset_types(){
+    	let contypes = document.querySelectorAll(".radio_contype + span")
+    	for(let i = 0 ;i<contypes.length ;i++){
+    		contypes[i].checked = false
+    		contypes[i].style.backgroundColor = "white"
+    		document.querySelector(".d_category").innerText = ""
+    	}
+    }
