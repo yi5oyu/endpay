@@ -106,6 +106,7 @@
             dataType:"json",
             success: function (response) {
                 alert("성공")
+                loadContents(2)
 //                 window.location.href="cashflow"
                 console.log("Success:", response)
             },

@@ -272,5 +272,6 @@
         border: 0;
         background-color: #5cc;
         border-radius: 5px;
+        cursor: pointer;
     }
 </style>
