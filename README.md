@@ -74,15 +74,14 @@ http://cashflow.kro.kr/pay/cashflow
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/f31130ba-d536-4e4e-ae38-2c7d656c98b8">
 </details>
 
-## **구현 페이지**
+## **기능 구현**
 
-### 기능 구현
+### 구형 페이지
 <h4>・ 로그인 / 회원가입</h4>
 
 <h4>・ 메인 페이지</h4>
 
-
-
+### 기능
 <h4>・ REST API</h4>
 
 
