@@ -6,7 +6,7 @@
  - [기술 및 도구](#기술-및-도구)
  - [ERD](#ERD)
  - [Sequence Diagram](#Sequence-Diagram)
- - [기능 구현](#기능-구현)
+ - [기능 구현](#구현-페이지)
  - [업데이트](#업데이트)
 
 ## **웹 사이트**
@@ -66,13 +66,14 @@ http://cashflow.kro.kr/pay/cashflow
 ## **Sequence Diagram**
 <details>
 <summary>접기/펼치기</summary>
-<h4>・ 회원</h4><br>
-
-<h4>・ 지출</h4><br>
-
+<h4>・ 회원</h4>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/071c7779-78c0-4a65-abf8-6fb05bd4d637">
+ 
+<h4>・ 지출</h4>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/f31130ba-d536-4e4e-ae38-2c7d656c98b8">
 </details>
 
-## **가능 구현**
+## **구현 페이지**
 
 
 <br>
