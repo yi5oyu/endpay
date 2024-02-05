@@ -253,7 +253,7 @@
 	    display: inline-block;
 	}
 	
-	.pagination a {
+	.pagination a, .pagebtn {
 	    color: black;
 	    float: left;
 	    padding: 8px 16px;
@@ -261,6 +261,9 @@
 	    border: 1px solid #ddd;
 	    margin: 0 4px;
 	    font-size: 16px;
+	}
+	.pagebtn {
+		height: 40px;
 	}
 	.spend_btn{
 	    display: inline-block;

@@ -32,7 +32,9 @@
             </div>
             <div class="spend_footer" id="spend_page">
                 <div class="pagination">
+                	<button id="prevPage">&lt;</button>
                     <!-- 페이지 번호가 들어갈 자리 -->
+                    <button id="nextPage">&gt;</button>
                 </div>
             </div>
         </div>
@@ -57,12 +59,10 @@ function title_Btn_Event(){
                     if(sorts[i].innerText == "▼"){
                         sorts[i].style.display = "inline-block"
                         sorts[i].innerText = "▲"
-                        console.log(i +" ASC")
                         loadData(0, i, "ASC")
                     } else{
                         sorts[i].style.display = "inline-block"
                         sorts[i].innerText = "▼"
-                        console.log(i +" DESC")
                         loadData(0, i, "DESC")
                     }
                     
@@ -82,8 +82,6 @@ function title_Btn_Event(){
             })
 
             function loadData(page, s, t) {
-            	console.log(s)
-            	console.log(t)
             	let sorts = ["sdate","money","extype","contype"]
                 $.ajax({
                     url: `api/spending/${member.mid}?page=` + page + 
@@ -93,7 +91,7 @@ function title_Btn_Event(){
                     success: function(data) {
                         displayData(data.content)
 
-                        displayPagination(data.totalPages)
+                        displayPagination(page, data.totalPages)
                     },
                     error: function(error) {
                         console.error('Error fetching data:', error)
@@ -115,12 +113,53 @@ function title_Btn_Event(){
                 $('#spendRows').html(rowsHtml)
             }
 
-            function displayPagination(totalPages) {
-            	let paginationHtml = ''
-                for (let i = 1; i <= totalPages; i++) 
-                    paginationHtml += '<a href="#">' + i + '</a>'
+            function displayPagination(currentPage, totalPages) {
+                let paginationHtml = '';
+				let pagebtns = document.querySelectorAll(".page-link")
+				
+                const maxButtons = 5;
+                const startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+                const endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+                if(currentPage < 1){
+                    for (let i = startPage; i <= endPage; i++) {
+                        paginationHtml += '<a href="#" class="page-link">' + i + '</a>'
+                    }
+                    paginationHtml += '<button class="pagebtn" id="nextPage">&gt;</button>'
+                } else{
+    				if (pagebtns[0].innerText > 1) {
+                        paginationHtml += '<button class="pagebtn" id="prevPage">&lt;</button>'
+                    }
+                    for (let i = startPage; i <= endPage; i++) {
+                        paginationHtml += '<a href="#" class="page-link">' + i + '</a>'
+                    }
+                    if (pagebtns[pagebtns.length-1].innerText < totalPages-3) {
+                        paginationHtml += '<button class="pagebtn" id="nextPage">&gt;</button>'
+                    }
+                }
                 
-                $('.pagination').html(paginationHtml)
+                $('.pagination').html(paginationHtml);
+
+                pagebtns = document.querySelectorAll(".page-link")
+                
+                $('.page-link').click(function (e) {
+                    e.preventDefault()
+                    loadData($(this).text() - 1)
+                })
+
+                $('#prevPage').click(function () {
+                    if (pagebtns[0].innerText < 7) {
+                        loadData(0)
+                    } else{
+                    	loadData(parseInt(pagebtns[0].innerText) - 1)
+                    }
+                })
+
+                $('#nextPage').click(function () {
+                    if (pagebtns[pagebtns.length-1].innerText < totalPages) {
+                    	loadData(parseInt(pagebtns[pagebtns.length - 1].innerText) + 1)
+                    }
+                })
             }
             spend_Del_Event()
         })
