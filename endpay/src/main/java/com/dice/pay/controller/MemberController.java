@@ -29,9 +29,14 @@ public class MemberController {
 	MembershipService ms;
 	
 	@PostMapping
-	public Membership saveMember(
+	public ResponseEntity<Message> saveMember(
 			@RequestBody Membership member) {
-		return ms.saveMember(member);
+		 ms.saveMember(member);
+		 Membership m = ms.findMember(member.getMid());
+		if(m != null) {
+			return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),m),HttpStatus.OK);
+		} else
+			return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),m),HttpStatus.UNAUTHORIZED);
 	}
 	
 	@GetMapping
@@ -58,15 +63,25 @@ public class MemberController {
 	}
 
 	@PutMapping
-    public void updateMember(HttpSession session,
+    public ResponseEntity<Message> updateMember(HttpSession session,
             @RequestBody Membership member) {
 		ms.updateMember(member);
-		session.setAttribute("member", ms.findMember(member.getMid()));
+		Membership m =ms.findMember(member.getMid());
+		session.setAttribute("member", m);
+		if(m != null) {
+			return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),m),HttpStatus.OK);
+		} else
+			return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),m),HttpStatus.UNAUTHORIZED);
+
     }
 	
 	@DeleteMapping("/{mid}")
-	public void deleteMember(
+	public ResponseEntity<Message> deleteMember(
 			@PathVariable Long mid) {
-		ms.deleteMember(mid);
+		Membership m = ms.deleteMember(mid);
+		if(m != null) {
+			return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),m),HttpStatus.OK);
+		} else
+			return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),m),HttpStatus.UNAUTHORIZED);
 	}
 }

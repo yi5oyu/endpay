@@ -4,9 +4,11 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.dice.pay.dto.Message;
 import com.dice.pay.entity.Membership;
 import com.dice.pay.repository.MembershipRepository;
 
@@ -21,10 +23,10 @@ public class MembershipService {
 		return mr.findByMid(mid);
 	}
 	
-	public Membership saveMember(Membership member) {
+	public void saveMember(Membership member) {
 		member.setUdate(new Date());
 		member.setGrade("GUEST");
-		return mr.save(member);
+		mr.save(member);
 	}
 	
 	public List<Membership> allMembers(){
@@ -48,11 +50,12 @@ public class MembershipService {
 			throw new RuntimeException("ID가 " + member.getMid() + "인 회원을 찾을 수 없습니다.");
 	}
 	
-	public void deleteMember(Long mid) {
-		Membership member = mr.findByMid(mid);
-	    if (member != null) {
-	        mr.delete(member);
-	    } else 
-	        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + mid);
+	public Membership deleteMember(Long mid) {
+		Membership m = mr.findByMid(mid);
+		if(m != null)
+			mr.delete(m);
+		else
+			m = null;
+		return m;
 	}
 }
