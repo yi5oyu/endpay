@@ -1,17 +1,80 @@
 <h1>CashFlow</h1> 
 
-### ・ 프로젝트 개요
+### ・ 목차
+ - [웹 사이트](#웹-사이트)
+ - [개요](#개요)
+ - [기술 및 도구](#기술-및-도구)
+ - [ERD](#ERD)
+ - [Sequence Diagram](#Sequence-Diagram)
+ - [기능 구현](#기능-구현)
+ - [업데이트](#업데이트)
 
-<h4><i>[목표 및 개발]</i></h4>
-지출 내역을 등록하고 등록된 지출 내역을 주,월,년 별로 출력 <br>
-JPA 사용 / AWS EC2를 이용한 배포
+## **웹 사이트**
+http://cashflow.kro.kr/pay/cashflow
+
+## **개요**
+<h4><i>[소개]</i></h4>
+지출관리 웹 사이트<br>
+지출 내역을 등록 / 지출 내역 차트 <br>
 
 <h4><i>[기간]</i></h4>
 2024.01.16 ~<br>
+배포: 2024.02.04.
 
-<h4><i>[소개]</i></h4>
+<h4><i>[인원]</i></h4>
+1명 (개인 프로젝트)
 
-CashFlow는 지출정보를 입력하고 지출 내역 통계를 확인하는 웹 서비스를 제공
+<h4><i>[목표 및 개발]</i></h4>
+
+## **기술 및 도구**
+<p>
+<img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/> 
+<img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"/> 
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/> 
+<img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/> 
+<img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white"/>
+</p>
+<p>
+<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white">
+<img src="https://img.shields.io/badge/JSP-black?style=flat-square&logo=java&logoColor=white"> 
+<img src="https://img.shields.io/badge/Servlet-008CDD?style=flat-square&logo=Stripe&logoColor=white">
+<img src="https://img.shields.io/badge/JSTL-007396?style=flat-square&logo=java&logoColor=white"/>
+<img src="https://img.shields.io/badge/AJAX-2E77BC?style=flat-square&logo=Betfair&logoColor=white">
+<img src="https://img.shields.io/badge/REST_API-004040?style=flat-square&logo=rest&logoColor=white"/>
+</p>
+<p>
+<img src="https://img.shields.io/badge/JPA-232F3E?style=flat-square&logo=Spreadshirt&logoColor=white"/>
+<img src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=flat-square&logo=spring&logoColor=white"/>
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>  
+<img src="https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apache-maven&logoColor=white"/>
+<img src="https://img.shields.io/badge/Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=black"/>  
+<img src="https://img.shields.io/badge/AWS_EC2-232F3E?style=flat-square&logo=Amazon-AWS&logoColor=white">
+<img src="https://img.shields.io/badge/AWS_RDS-232F3E?style=flat-square&logo=Amazon-AWS&logoColor=white">
+<img src="https://img.shields.io/badge/Amazon_Linux-2023-232F3E?style=flat-square&logo=Amazon&logoColor=white"/>
+<img src="https://img.shields.io/badge/Putty-005CFF?style=flat-square&logo=putty&logoColor=white"/>
+</p>
+<p>
+<img src="https://img.shields.io/badge/STS-6DB33F?style=flat-square&logo=Spring&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"/>
+<img src="https://img.shields.io/badge/Mermaid-0076BF?style=flat-square&logo=mermaid&logoColor=white"/>  
+</p>
+
+
+## **ERD**
+
+## **Sequence Diagram**
+<details>
+<summary>접기/펼치기</summary>
+<h4>・ 회원</h4><br>
+
+<h4>・ 지출</h4><br>
+
+</details>
+
+## **가능 구현**
+
+
 <br>
 
 <br>
@@ -19,7 +82,7 @@ CashFlow는 지출정보를 입력하고 지출 내역 통계를 확인하는 �
 검색창에 검색어 입력 / 각 페이지 별 존재하는 해시태그를 클릭하면 검색 페이지에 해당 검색어 해당되는 게시물이 최신순 / 조회순으로 보여집니다.<br>
 작성된 레시피와 후기들을 최신순으로 게시판 페이지에 보여지고 각 게시글을 클릭하면 해당 레시피 / 후기 페이지로 이동합니다. <br>
 <br>
-<h4><i>[목표 및 개발]</i></h4>
+
 <!-- 
 3차에 걸친 프로젝트를 통해 팀원 모두가 개발의 전과정을 경험 하는 것을 목표로 했습니다.<br>
 <br>
