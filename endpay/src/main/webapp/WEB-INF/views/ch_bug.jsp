@@ -7,9 +7,9 @@
         <div class="ht_title">Bug fix</div>
 <!--         <div class="date_title">(2024-02-04)</div> -->
     </div>
-<!--     <ul> -->
-<!--         <li class="histroy_contents" >웹 사이트 배포: http://cashflow.kro.kr</li> -->
-<!--     </ul> -->
+    <ul>
+        <li class="histroy_contents" >마이페이지 로그아웃 기능 수정</li>
+    </ul>
 </main>
 </main>
 </html>
