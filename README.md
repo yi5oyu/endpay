@@ -28,11 +28,11 @@ http://cashflow.kro.kr/pay/cashflow
 
 ## **기술 및 도구**
 <p>
+<img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white"/>
 <img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/> 
 <img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"/> 
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/> 
 <img src="https://img.shields.io/badge/jquery-0769AD?style=flat-square&logo=jquery&logoColor=white"/> 
-<img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=java&logoColor=white"/>
 </p>
 <p>
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white">
@@ -78,12 +78,25 @@ http://cashflow.kro.kr/pay/cashflow
 
 ### 구형 페이지
 <h4>・ 로그인 / 회원가입</h4>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/dbad5adf-310d-469a-9e3e-71da6a460212">
 
 <h4>・ 메인 페이지</h4>
+- 홈
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/cc64b718-c80a-4cce-8f04-b3dd98541df7"><br>
+- 지출 입력
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/df91cb0a-36a8-4d1a-abc5-0e370205715c"><br>
+- 지출 확인
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/4678b272-cf49-4e0a-a013-6b2ea7bcd107"><br>
+- 마이페이지
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/2cdfb0ba-7f81-476d-a586-4e347bf893f0">
 
 ### 기능
 <h4>・ REST API</h4>
-
+- 회원
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/18c25ba7-bbbe-4574-813e-6aaaffd32693">
+<br>
+- 지출
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46">
 
 
 
