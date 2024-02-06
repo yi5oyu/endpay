@@ -62,9 +62,13 @@ http://cashflow.kro.kr/pay/cashflow
 
 
 ## **ERD**
+<details>
+<summary>접기/펼치기</summary>
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/c6a947f0-2556-4f10-87ed-fa8afbe7cbb2">
+</details>
 
 ## **Sequence Diagram**
+
 <details>
 <summary>접기/펼치기</summary>
 <h4>・ 회원</h4>
@@ -75,8 +79,10 @@ http://cashflow.kro.kr/pay/cashflow
 </details>
 
 ## **기능 구현**
-
-### 구형 페이지
+<details>
+<summary>접기/펼치기</summary>
+ 
+### 구현 페이지
 <h4>・ 로그인 / 회원가입</h4>
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/dbad5adf-310d-469a-9e3e-71da6a460212">
 
@@ -93,11 +99,10 @@ http://cashflow.kro.kr/pay/cashflow
 ### 기능
 <h4>・ REST API</h4>
 - 회원
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/18c25ba7-bbbe-4574-813e-6aaaffd32693">
-<br>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/18c25ba7-bbbe-4574-813e-6aaaffd32693"><br>
 - 지출
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46">
-
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46"><br>
+</details>
 
 
 ## **업데이트**
