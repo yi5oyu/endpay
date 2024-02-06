@@ -18,7 +18,7 @@
                  <a href="newsign">회원가입</a>
              </div>
              <div class="login_row">
-                 <button class="login_btn" onclick="sendAjaxRequest()">로그인</button>
+                 <button class="login_btn">로그인</button>
              </div>
             <div class="login_row sns_btns">
 <!--             
@@ -36,6 +36,27 @@
         </div>
     </div>
     <script>
+	   let logs = document.querySelectorAll(".login_input")
+	   for(let i = 0 ; i<logs.length ;i++){
+	        logs[i].addEventListener("focus",function(){
+	            logs[i].style.border = "2px solid #5cc4ef"
+	        })
+	        logs[i].addEventListener("focusout",function(){
+	            logs[i].style.border = "none"
+	        })
+	   }
+       document.querySelector(".login_btn").addEventListener("click", function(){
+           let b = true
+           for(let i = 0;i<logs.length ;i++){
+               if(logs[i].value == "")
+                   b = false
+           }
+           if(b){
+        	   sendAjaxRequest()
+           } else{
+               alert("아이디와 비밀번호를 입력해주세요")
+           }
+      })
      function sendAjaxRequest() {
          let userData = 
              "userid="+$("input[name='userid']").val()+
@@ -53,6 +74,7 @@
              },
              error: function (error) {
                  console.error("Error:", error)
+                 alert("아이디/비밀번호를 다시 확인해주세요")
                  window.location.href="login"
              }
          })
