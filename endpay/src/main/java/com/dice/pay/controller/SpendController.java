@@ -9,6 +9,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dice.pay.dto.Message;
 import com.dice.pay.entity.Membership;
 import com.dice.pay.entity.Spending;
 import com.dice.pay.service.SpendingService;
@@ -30,11 +33,15 @@ public class SpendController {
 	SpendingService ss;
 	
 	@PostMapping
-	public Spending saveSpending(HttpSession session,
+	public ResponseEntity<Message> saveSpending(HttpSession session,
 			@RequestBody Spending spending) {
 		 Membership membership = (Membership)session.getAttribute("member");
 		 spending.setMembership(membership);
-		return ss.saveExpenses(spending);
+		Spending s = ss.saveExpenses(spending);
+		if(s != null) {
+			return new ResponseEntity<Message>(new Message("성공",HttpStatus.OK.value(),s),HttpStatus.OK);
+		} else
+			return new ResponseEntity<Message>(new Message("실패",HttpStatus.UNAUTHORIZED.value(),s),HttpStatus.UNAUTHORIZED);
 	}
 	
 	@GetMapping
@@ -82,10 +89,6 @@ public class SpendController {
 			@PathVariable String startDate,
 			@PathVariable String endDate
 			) {
-		System.out.println(mid);
-		System.out.println(startDate);
-		System.out.println(endDate);
-		// 각각 mid: 61, startDate: 2023-01-01, endDate: 2023-12-30 값이 들어옴
 		return ss.dateSpendings(mid, startDate, endDate);	
 	}
 	

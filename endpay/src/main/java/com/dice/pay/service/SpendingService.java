@@ -68,7 +68,6 @@ public class SpendingService {
 		for(Long sid: sids) {
 			Spending spending = sr.findBySid(sid);
 		    if (spending != null) {
-		    	System.out.println("삭제완료");
 		        sr.delete(spending);
 		    } else 
 		        throw new IllegalArgumentException("해당 유저를 찾을 수 없습니다: " + sid);	

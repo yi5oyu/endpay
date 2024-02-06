@@ -5,9 +5,9 @@ import com.dice.pay.entity.Membership;
 public class Message {
     private String message;
     private int statusCode;
-    private Membership data;
+    private Object data;
     
-    public Message(String message, int statusCode, Membership data) {
+    public Message(String message, int statusCode, Object data) {
         this.message = message;
         this.statusCode = statusCode;
         this.data = data;
@@ -21,7 +21,7 @@ public class Message {
         return statusCode;
     }
     
-    public Membership getData() {
+    public Object getData() {
     	return data;
     }
 }
