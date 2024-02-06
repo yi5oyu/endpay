@@ -8,7 +8,7 @@
         <div class="date_title">(2024-02-04)</div>
     </div>
     <ul>
-        <li class="histroy_contents" >웹 사이트 배포: http://cashflow.kro.kr</li>
+        <li class="histroy_contents" >웹 사이트 배포: http://cashflow.kro.kr/pay/cashflow</li>
     </ul>
 </main>
 </html>
