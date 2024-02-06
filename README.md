@@ -87,21 +87,21 @@ http://cashflow.kro.kr/pay/cashflow
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/dbad5adf-310d-469a-9e3e-71da6a460212">
 
 <h4>・ 메인 페이지</h4>
-- 홈
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/cc64b718-c80a-4cce-8f04-b3dd98541df7"><br>
-- 지출 입력
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/df91cb0a-36a8-4d1a-abc5-0e370205715c"><br>
-- 지출 확인
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/4678b272-cf49-4e0a-a013-6b2ea7bcd107"><br>
-- 마이페이지
+<p>- 홈</p>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/cc64b718-c80a-4cce-8f04-b3dd98541df7">
+<p>- 지출 입력</p>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/df91cb0a-36a8-4d1a-abc5-0e370205715c">
+<p>- 지출 확인</p>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/4678b272-cf49-4e0a-a013-6b2ea7bcd107">
+<p>- 마이페이지</p>
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/2cdfb0ba-7f81-476d-a586-4e347bf893f0">
 
 ### 기능
 <h4>・ REST API</h4>
-- 회원
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/18c25ba7-bbbe-4574-813e-6aaaffd32693"><br>
-- 지출
-<img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46"><br>
+<p>- 회원</p>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/18c25ba7-bbbe-4574-813e-6aaaffd32693">
+<p>- 지출</p>
+<img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46">
 </details>
 
 
@@ -113,10 +113,11 @@ http://cashflow.kro.kr/pay/cashflow
 <br>
 <h4>Bug Fixes</h4>
  - 마이페이지 로그아웃 기능 수정 (2024-02-04)
+ - 회원가입 오류 수정 (2024-02-06)
 <br>
 
 
 ## **개선점/후기**
 <p>
-프로젝트를 진행하며 여러 회의를 통해 계획과 일정을 수정하는 과정을 경험하며 초기 요구사항 분석과 스토리 보드작성의 중요성을 알게 되었습니다. 매주 수업이 끝난 6시 이후 팀원들과 공부하며 프로젝트 진행방향과 작성한 코드를 리뷰하며 서로의 코드를 빠르게 이해하기 위해 코드의 가독성을 위해 들여쓰기 / 코드 스타일, 변수명 작성, 주석의 중요성을 알게 되었습니다. 수 많은 에러 메세지를 보며 에러 발생원인을 찾기 위해 추리하고 검색하며 잘못된 경로로 인한 400번대 에러와 Null값과 SQL문에 의한 500번대 에러등을 조금은 구별하게 되었고 다음 프로젝트에선 좀 더 적극적으로 예외처리를 하기 위해 노력해야 겠다는 생각이 들었습니다.
+
 </p>
