@@ -102,7 +102,7 @@ http://cashflow.kro.kr/pay/cashflow
 <img src="https://github.com/yi5oyu/endpay/assets/111046436/b914e9e2-67b5-48cc-9974-f68bb32c6b46">
 </details>
 
-
+<!-- 
 ## **업데이트**
 ### ・ Release (2024.02.04)
 <h4>Features</h4>
@@ -113,11 +113,11 @@ http://cashflow.kro.kr/pay/cashflow
  - 마이페이지 로그아웃 기능 수정 (2024-02-04)<br>
  - 회원가입 오류 수정 (2024-02-06)
 <br>
-
+-->
 
 ## **개선점/후기**
 
-JPA를 처음 사용하며 [많은 오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정.<br>
+JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정.<br>
 기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다. <br>
 JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL을 학습 필요.<br>
 putty를 이용해 생성한 AWS EC2와 연결하고 sentOS계열의 Amazon Linux를 이용해 [명령어](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release)를 입력해 빌드하고 Tomcat에 배포.
