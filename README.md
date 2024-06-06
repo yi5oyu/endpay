@@ -7,7 +7,7 @@
  - [ERD](#ERD)
  - [Sequence Diagram](#Sequence-Diagram)
  - [기능 구현](#기능-구현)
- - [업데이트](#업데이트)
+ <!-- [업데이트](#업데이트) -->
  - [개선점/후기](#개선점/후기)
 ## **웹 사이트**
 http://cashflow.kro.kr/pay/cashflow
