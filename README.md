@@ -117,6 +117,8 @@ http://cashflow.kro.kr/pay/cashflow
 
 ## **개선점/후기**
 
+깜빡임 없이 페이지 이동 AJAX를 사용하여서 비동기 방식의 SPA 페이지 구현
+
 JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정.<br>
 기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다. <br>
 JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL을 학습 필요.<br>
