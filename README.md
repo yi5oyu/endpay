@@ -117,12 +117,14 @@ http://cashflow.kro.kr/pay/cashflow
 
 ## **개선점/후기**
 
-깜빡임 없이 페이지 이동 AJAX를 사용하여서 비동기 방식의 SPA 페이지 구현
+AJAX를 사용하여서 비동기 방식의 SPA 페이지 구현
+Maven을 이용한 spring 프로젝트 war 빌드 후 AWS EC2 서버 수동 배포
+JPA를 사용한 REST API 구현
 
-JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정.<br>
-기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다. <br>
-JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL을 학습 필요.<br>
-putty를 이용해 생성한 AWS EC2와 연결하고 sentOS계열의 Amazon Linux를 이용해 [명령어](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release)를 입력해 빌드하고 Tomcat에 배포.
-코드를 변경할때마다 빌드와 배포, Tomcat 서버 on/off를 해야하니 빌드 자동화와 무중단 배포 학습 필요.<br>
-화면구성, 프로젝트의 구조와 구현 방법에 많은 시간이 쓰임. <br>
-다음 프로젝트에선 시간을 효율적으로 사용하기 위해 시퀀스 다이어그램를 미리 작성 필요 
+JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정<br>
+기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다 <br>
+JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL or QueryDSL학습 필요<br>
+putty를 이용해 생성한 AWS EC2와 연결하고 sentOS계열의 Amazon Linux를 이용해 [명령어](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release)를 입력해 빌드하고 Tomcat에 배포
+코드를 변경할때마다 빌드와 배포, Tomcat 서버 on/off를 해야하니 빌드 자동화와 무중단 배포 학습 필요<br>
+<!-- 화면구성, 프로젝트의 구조와 구현 방법에 많은 시간이 쓰임 <br> -->
+https 인증 필요
