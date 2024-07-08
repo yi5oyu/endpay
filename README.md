@@ -122,10 +122,12 @@ Maven을 이용한 spring 프로젝트 war 빌드 후 AWS EC2 서버 수동 배�
 JPA를 사용한 REST API 구현<br>
 <br>
 <!-- JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정<br> -->
+의존성 충돌문제로 여러 oracle 버전를 시험해 본뒤 MySQL로 변경<br>
 기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다 <br>
 JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL or QueryDSL학습 필요<br>
 putty를 이용해 생성한 AWS EC2와 연결하고 sentOS계열의 Amazon Linux를 이용해 [명령어](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release)를 입력해 빌드하고 Tomcat에 배포
 코드를 변경할때마다 빌드와 배포 Tomcat 서버 on/off를 해야하니 빌드 자동화와 무중단 배포 학습 필요<br>
-HTTPS 인증 필요
+HTTPS 인증 필요<br>
+의존성 충돌
 <!-- 화면구성, 프로젝트의 구조와 구현 방법에 많은 시간이 쓰임 <br> -->
 
