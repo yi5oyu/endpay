@@ -7,10 +7,11 @@
  - [ERD](#ERD)
  - [Sequence Diagram](#Sequence-Diagram)
  - [기능 구현](#기능-구현)
- <!-- [업데이트](#업데이트) -->
  - [개선점/후기](#개선점/후기)
 ## **웹 사이트**
-~~http://cashflow.kro.kr/pay/cashflow~~
+- 무료 도메인 사용: https://내도메인.한국     
+~~http://cashflow.kro.kr/pay/cashflow~~   
+
 
 ## **개요**
 <h4><i>[소개]</i></h4>
@@ -18,7 +19,7 @@
 지출 내역을 등록 / 지출 내역 차트 <br>
 
 <h4><i>[기간]</i></h4>
-2024.01.16 <br>
+2024.01.16 ~<br>
 
 ~~배포: 2024.02.04.~~
 
@@ -121,25 +122,24 @@
 - AJAX를 사용해 비동기 방식의 SPA 페이지 구현   
   : 로딩없는 페이지 이동   
   
-- AWS EC2 서버에 수동 배포 ([수동 배포 방법](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release))   
+- AWS EC2(sentOS 계열) 서버에 수동 배포 ([수동 배포 방법](https://github.com/yi5oyu/Study/blob/main/AWS/EC2/2.%20Release))   
   : 코드를 변경할때마다 수동 빌드 > EC2 서버접속 > 배포 Tomcat 서버 OFF > war 파일 이동 > 서버 ON   
    > 빌드 자동화와 무중단 배포 학습 필요   
   
-- JPA를 사용한 REST API 구현
-  : 
+- JPA를 사용한 REST API 구현   
+  : @Query 네이티브 SQL 사용
+   > QueryDSL 학습 필요(복잡한 쿼리문, 파라미터가 많은 동적쿼리 처리)
   
-- 의존성 충돌
-  : 낮은 버전 Spring 사용으로 Oracle Dialect 
+- 의존성 충돌   
+  : 낮은 버전 Spring 사용으로 낮은 버전의 Oracle 사용으로 인한 오류(ORA-25156: old style outer join (+) cannot be used with ANSI joins)
+   > MySQL로 변경  
    > Spring Boot로 전환
 
+- HTTP (안전하지 않은 사이트 경고)  
+  > HTTPS 인증 필요
 <br>
-<!-- JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정<br> -->
-의존성 충돌문제로 여러 oracle 버전를 시험해 본뒤 MySQL로 변경<br>
-기본 CURD 기능을 제공해주는 Spring data JPA를 사용하며 편했지만 복잡한 검색을 해야할땐 결국 SQL문을 작성해야했다 <br>
-JPQL에 익숙하지않아 @Query 네이티브 SQL을 사용했는데 향후 JPQL or QueryDSL학습 필요<br>
-putty를 이용해 생성한 AWS EC2와 연결하고 sentOS계열의 Amazon Linux를 이용해 를 입력해 빌드하고 Tomcat에 배포
 
-HTTPS 인증 필요<br>
+<!-- JPA를 처음 사용하며 [오류](https://github.com/yi5oyu/Study/blob/main/JPA/0.%20Error/Memo.txt)를 접하고 수정<br> -->
 
 <!-- 화면구성, 프로젝트의 구조와 구현 방법에 많은 시간이 쓰임 <br> -->
 
